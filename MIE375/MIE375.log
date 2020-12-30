@@ -1,0 +1,433 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  18 DEC 2020 14:02
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**MIE375.tex
+(./MIE375.tex
+LaTeX2e <2018-12-01>
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip43
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks14
+\ex@=\dimen103
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen104
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
+\tag@help=\toks15
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
+\andhelp@=\toks16
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks17
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks18
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/esint/esint.sty
+Package: esint 
+\symlargesymbolsA=\mathgroup4
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/cancel/cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/commath/commath.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup5
+)
+(./MIE375.aux)
+\openout1 = `MIE375.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Try loading font information for OT1+pplj on input line 13.
+
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplj.fd
+File: ot1pplj.fd 2004/09/06 font definitions for OT1/pplj.
+) (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count100
+\scratchdimen=\dimen114
+\scratchbox=\box29
+\nofMPsegments=\count101
+\nofMParguments=\count102
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count103
+\MPscratchDim=\dimen115
+\MPnumerator=\count104
+\makeMPintoPDFobject=\count105
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    Try loading font information for OT1+pplx on input line 17.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pplx.fd
+File: ot1pplx.fd 2004/09/06 font definitions for OT1/pplx.
+)
+LaTeX Font Info:    Try loading font information for OML+zplm on input line 17.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMS+zplm on input line 17.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Try loading font information for OMX+zplm on input line 17.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Try loading font information for U+esint on input line 17.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/esint/uesint.fd
+File: uesint.fd 
+)
+LaTeX Font Info:    Try loading font information for OT1+zplm on input line 17.
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+) [1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 20.
+ (./MIE375.toc
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 1.
+
+[2])
+\tf@toc=\write3
+\openout3 = `MIE375.toc'.
+
+ [3]
+LaTeX Font Info:    Font shape `OT1/pplj/bx/n' in size <12> not available
+(Font)              Font shape `OT1/pplj/b/n' tried instead on input line 30.
+LaTeX Font Info:    Try loading font information for OMS+pplj on input line 32.
+
+LaTeX Font Info:    No file OMSpplj.fd. on input line 32.
+
+
+LaTeX Font Warning: Font shape `OMS/pplj/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 32.
+
+<simple.png, id=17, 498.86375pt x 285.065pt>
+File: simple.png Graphic file (type png)
+<use simple.png>
+Package pdftex.def Info: simple.png  used on input line 45.
+(pdftex.def)             Requested size: 199.54196pt x 114.02397pt.
+<compound.png, id=19, 496.85625pt x 335.2525pt>
+File: compound.png Graphic file (type png)
+<use compound.png>
+Package pdftex.def Info: compound.png  used on input line 55.
+(pdftex.def)             Requested size: 198.73897pt x 134.09862pt.
+[4 <./simple.png> <./compound.png>]
+<nominal.png, id=28, 917.4275pt x 211.79124pt>
+File: nominal.png Graphic file (type png)
+<use nominal.png>
+Package pdftex.def Info: nominal.png  used on input line 60.
+(pdftex.def)             Requested size: 275.23038pt x 63.53786pt.
+ [5 <./nominal.png>]
+<compounding.png, id=35, 975.645pt x 230.8625pt>
+File: compounding.png Graphic file (type png)
+<use compounding.png>
+Package pdftex.def Info: compounding.png  used on input line 93.
+(pdftex.def)             Requested size: 292.69576pt x 69.25928pt.
+<discounting.png, id=36, 1022.82124pt x 250.9375pt>
+File: discounting.png Graphic file (type png)
+<use discounting.png>
+Package pdftex.def Info: discounting.png  used on input line 97.
+(pdftex.def)             Requested size: 306.84874pt x 75.28181pt.
+ [6 <./compounding.png> <./discounting.png>] [7]
+<yield.png, id=46, 639.38875pt x 164.615pt>
+File: yield.png Graphic file (type png)
+<use yield.png>
+Package pdftex.def Info: yield.png  used on input line 150.
+(pdftex.def)             Requested size: 383.6362pt x 98.76976pt.
+<py.png, id=47, 625.33624pt x 235.88126pt>
+File: py.png Graphic file (type png)
+<use py.png>
+Package pdftex.def Info: py.png  used on input line 156.
+(pdftex.def)             Requested size: 437.73239pt x 165.11575pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--164
+
+ []
+
+[8 <./yield.png> <./py.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 168--171
+
+ []
+
+[9]
+<yieldcurve.png, id=57, 559.08875pt x 184.69pt>
+File: yieldcurve.png Graphic file (type png)
+<use yieldcurve.png>
+Package pdftex.def Info: yieldcurve.png  used on input line 181.
+(pdftex.def)             Requested size: 335.45583pt x 110.81483pt.
+ [10 <./yieldcurve.png>]
+<invariance.png, id=62, 583.17876pt x 80.3pt>
+File: invariance.png Graphic file (type png)
+<use invariance.png>
+Package pdftex.def Info: invariance.png  used on input line 200.
+(pdftex.def)             Requested size: 349.90996pt x 48.18036pt.
+ [11 <./invariance.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 215--215
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 253--255
+
+ []
+
+[13]
+<port.png, id=74, 485.815pt x 256.96pt>
+File: port.png Graphic file (type png)
+<use port.png>
+Package pdftex.def Info: port.png  used on input line 287.
+(pdftex.def)             Requested size: 291.49124pt x 154.17719pt.
+<minvar.png, id=75, 707.64375pt x 300.12125pt>
+File: minvar.png Graphic file (type png)
+<use minvar.png>
+Package pdftex.def Info: minvar.png  used on input line 293.
+(pdftex.def)             Requested size: 424.58952pt x 180.07413pt.
+ [14 <./port.png>] [15 <./minvar.png>] [16]
+<riskfree.png, id=87, 583.17876pt x 321.2pt>
+File: riskfree.png Graphic file (type png)
+<use riskfree.png>
+Package pdftex.def Info: riskfree.png  used on input line 347.
+(pdftex.def)             Requested size: 233.26736pt x 128.47772pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 351--352
+
+ []
+
+[17 <./riskfree.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 377--379
+
+ []
+
+<capm.png, id=92, 773.89125pt x 355.3275pt>
+File: capm.png Graphic file (type png)
+<use capm.png>
+Package pdftex.def Info: capm.png  used on input line 380.
+(pdftex.def)             Requested size: 464.33833pt x 213.19814pt.
+<sml.png, id=93, 658.46pt x 260.975pt>
+File: sml.png Graphic file (type png)
+<use sml.png>
+Package pdftex.def Info: sml.png  used on input line 387.
+(pdftex.def)             Requested size: 263.37933pt x 104.38815pt.
+[18 <./capm.png>]
+<rkrw.png, id=98, 826.08624pt x 438.63875pt>
+File: rkrw.png Graphic file (type png)
+<use rkrw.png>
+Package pdftex.def Info: rkrw.png  used on input line 407.
+(pdftex.def)             Requested size: 330.42863pt x 175.45238pt.
+ [19 <./sml.png> <./rkrw.png>] [20]
+<call.png, id=108, 420.57124pt x 234.8775pt>
+File: call.png Graphic file (type png)
+<use call.png>
+Package pdftex.def Info: call.png  used on input line 440.
+(pdftex.def)             Requested size: 168.22551pt x 93.94933pt.
+<put.png, id=109, 400.49625pt x 332.24126pt>
+File: put.png Graphic file (type png)
+<use put.png>
+Package pdftex.def Info: put.png  used on input line 445.
+(pdftex.def)             Requested size: 160.19566pt x 132.89413pt.
+ [21 <./call.png> <./put.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
+
+ []
+
+[22] (./MIE375.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 2565 strings out of 492616
+ 34846 string characters out of 6129482
+ 103247 words of memory out of 5000000
+ 6373 multiletter control sequences out of 15000+600000
+ 41210 words of font info for 105 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,9n,25p,448b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/fpl/fplbj8a.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/t
+ype1/urw/palatino/uplb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/ur
+w/palatino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/palat
+ino/uplri8a.pfb>
+Output written on MIE375.pdf (22 pages, 630491 bytes).
+PDF statistics:
+ 155 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+

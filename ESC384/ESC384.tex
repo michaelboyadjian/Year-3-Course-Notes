@@ -1,0 +1,602 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{cancel}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\newcommand{\Lagr}{\mathcal{L}}
+\newcommand{\R}{\mathbb{R}}
+\linespread{1.05}
+\usepackage{commath}
+\usepackage[sc,osf]{mathpazo}
+
+
+\begin{document}
+
+\title{ESC384  \\ Partial Differential Equations}
+\author{Michael Boyadjian}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\bigskip
+\bigskip
+\bigskip
+
+\section{Introduction to Partial Differential Equations}
+
+\subsection{Definition of Partial Differential Equations}
+A PDE is an equation that relates an unknown function $u$ and some of its partial derivatives, where the function is defined over a $n$-dimensional spatial domain $\Omega \subset R_n$ and time interval $I \subset R$. In general, a PDE can be expressed as
+$$ G \left( x_1, \cdots, x_n,t,u,\frac{\partial u}{\partial x}, \cdots, \frac{\partial u}{\partial x_n},  \frac{\partial u}{\partial t}, \frac{\partial^2 u }{\partial x_1^2}, \frac{\partial^2 u }{\partial x_1 \partial x_2}, \cdots \right) = 0$$
+where $x_1,  \cdots x_n$ are the spatial coordinates,$t$ is the time, and $\frac{\partial u}{\partial x_n}, \cdots$ denote the partial derivatives.  
+
+
+\subsection{Classification of PDEs}
+We can classify PDEs by their order, linearity, and homogeneity. 
+\begin{itemize}
+\item \textbf{Order:}  the order of the highest-order derivative that appears in the PDE.
+\item \textbf{Linearity:} A PDE is said to be linear if the PDE can be expressed as $ \Lagr u = f$, where $L$ is a linear operator and $f$ is a function independent of $u$. If a PDE is not linear, then it
+is called a nonlinear PDE.  An operator $\Lagr$ is a linear operator if $\Lagr(\alpha w + \beta v) = \alpha \Lagr w + \beta \Lagr v $
+for any functions $w$ and $v$ and any scalars $\alpha$ and $\alpha$.
+\item \textbf{Homogeneity:} A linear homogeneous PDE is a PDE of the form $\Lagr u = 0$ where $\Lagr$ is a linear operator.  If a linear PDE is not homogeneous, then it is nonhomogeneous (or inhomogeneous).
+\end{itemize}
+
+\subsection{Classification of Second Order PDEs}
+Consider a second-order linear PDE with a differential operator on $R_n$:
+$$ \Lagr u = \sum_{i,j=1}^n a_{ij} \frac{\partial ^2u}{\partial x_i \partial x_j} + \sum_{i=1}^n b_{ij} \frac{\partial u}{\partial x_i } + cu $$
+for some coefficients $a_{ij}$, $b_i$ and $c$. Let $A \in \R ^{nxn}$ be a symmetric matrix such that $A_{ij} = a_{ij},  i, j = 1, \cdots  n$.  Let $\lambda_1, \cdots \lambda_n$ be the eigenvalues of $A$. Then we have the following classification of PDEs:
+\begin{itemize}
+\item \textbf{Elliptic:} all eigenvalues are nonzero and have the same sign\textit{ (i.e.  all positive or all negative)}
+\item \textbf{Hyperbolic} all eigenvalues are nonzero, and one of them has the opposite sign from the $n-1$
+\item \textbf{Ultrahyperbolic:} all eigenvalues are nonzero, and at least two of them are positive and at least two of them are negative
+\item \textbf{Parabolic:} exactly one eigenvalue is zero and all other eigenvalues have the same sign
+\end{itemize}
+
+\pagebreak
+
+
+
+\section{Fourier Series - Formulation}
+
+\subsection{Periodic, Even, and Odd Functions}
+As periodic functions play an important role in the construction of Fourier series, we first provide a few definitions related to the periodicity of functions.
+
+\begin{itemize}
+\item \textbf{Periodic Function: }A function $f$ : $\R \rightarrow \R$ is said to be $z$-periodic if $$f(x+z)=f(x)$$ for all $ x \in \R$. The real number $z$ is called a period. The smallest real number $z$ such that the relationship holds is called the fundamental period.
+\item \textbf{Even Function:} A function $f$ : $(-a, a) \rightarrow \R$ is an even function if for all $x \in (-a, a)$,$$f(-x) = f(x)$$
+\item \textbf{Odd Function:} A function $f$ : $(-a, a) \rightarrow \R$ is an odd function if for all $x \in (-a, a)$, $$f(-x) = -f(x)$$
+\end{itemize}
+We also note few properties of even and odd functions under some operations; each result can be readily proven from the definition of even and odd functions:
+\begin{itemize}
+\item \textbf{Summation:} The sum of two even functions is even. The sum of two odd functions is odd. However, the sum of an even function and an odd function is in general neither even nor odd.
+\item \textbf{Multiplication:} The product of two even functions or two odd functions is even. The product of an even function and an odd function is odd.
+\item \textbf{Differentiation: }The derivative of an odd function is even, and the derivative of an even function is odd. The result follows from the chain rule.
+\item \textbf{Integration: }If $f$ is an even function, then the integral $g(x) = \int_{\xi=0}^{x} f(\xi)d \xi$ is odd.  If $f$ is an odd function, then the integral $g(x) = \int_{\xi=0}^x f(\xi) d\xi$ is even. 
+\item \textbf{Integrals: }If $f$ is odd,  then $\int_{-a}^{a} f(x)dx = 0.$ If $f$ is even, then $\int_{-a}^{a} f(x)dx = 2 \int_{0}^{a} f(x)dx$
+\item \textbf{Origin Behaviour:}  If $f$ is even and is differentiable at $x = 0$, then its derivative must vanish : $f'(x = 0) = 0$.  If f is odd and is continuous at $x = 0$, then its value must vanish : $f(x = 0) = 0$.
+\end{itemize}
+Given a function defined on a finite interval, we may also “extend” the function to the entire real line R to construct a periodic function on $\R$. We introduce a few different extensions.
+\begin{itemize}
+\item \textbf{Periodic Extension:} Given a function $f$ : $(0, a) \rightarrow \R$, its periodic extension to $\R$ is the function $f_p$ : $\R \rightarrow \R$ such that
+$f^p(x) = f(x)$, $x \in (0, a)$, and has a period a.
+\item \textbf{Even Periodic Extension:} Given a function $f$ : $(0,a) \rightarrow \R$, its even periodic extension is the function $f_{ep}$ : $\R \rightarrow \R$ with a period of $2a$ such that $$f^{e,p}(x) = f(x), \; \; x \in (0, a)$$ $$f^{e,p}(x) = f(-x), \; \; x \in (-a, 0)$$
+\item \textbf{Odd Periodic Extension:} Given a function $f$ : $(0,a) \rightarrow \R$, its odd periodic extension is the function $f^{o,p}$ : $\R \rightarrow \R$ with a period of $2a$ such that $$f^{o,p}(x) = f(x), \; \; x \in (0, a)$$ $$f^{o,p}(x) = -f(-x), \; \; x \in (-a, 0)$$
+\end{itemize}
+
+\subsection{Fourier Series}
+Fourier series provide a representation of a periodic function as a linear combination of sinusoidal functions.  Some important definitions and properties follow:
+\begin{itemize}
+\item \textbf{Fourier Series:} Let $f$ : $\R \rightarrow \R$ be a 2-periodic function. The Fourier series of $f$ is 
+$$ f(x) \approx \frac{1}{2} a_0 + \sum_{n=1}^{\infty} \left( a_n \cos (n\pi x) + b_n \sin (n\pi x) \right)$$
+with the following coefficients $a_n$ and $b_n$
+$$ a_n = \int_{-1}^{1} \cos (n\pi x) f(x) dx,  \quad n=0, 1,2, \cdots$$
+$$ b_n = \int_{-1}^{1} \sin (n\pi x) f(x) dx,  \quad n=1,2,3, \cdots$$
+\item \textbf{Truncated Fourier Series:} Let $f$ : $\R \rightarrow \R$ be a 2-periodic function. The N-term truncated Fourier series of $f$ is 
+$$ s_n(x) \approx \frac{1}{2} a_0 + \sum_{n=1}^{N} \left( a_n \cos (n\pi x) + b_n \sin (n\pi x) \right)$$
+with the same coefficients $a_n$ and $b_n$ as above
+\item \textbf{Orthogonality:} The following expressions hold true on the basis of being orthonormal with respect to the $L^2$ inner product, $(w, v) \equiv \int _{-1}^{1} wvdx$. \textit{(\underline{Note}: $\delta_{nm} = 1$, when $n=m$ and $\delta_{nm} = 0$, when $n \neq m$)}
+$$\int _{-1}^{1} \sin (n\pi x)\sin (n\pi x)dx = \delta_{nm} $$ 
+$$\int _{-1}^{1} \cos (n\pi x)\cos (n\pi x)dx =\delta_{nm} $$ 
+$$\int _{-1}^{1} \sin (n\pi x)\cos (n\pi x)dx =0 $$ 
+\end{itemize}
+
+\subsection{Fourier Sine and Cosine Series}
+It is often also useful to construct a representation specialized to odd or even periodic functions. A Fourier sine series is the Fourier series associated with odd periodic functions, and a Fourier cosine series is the Fourier series associated with even periodic functions.
+\begin{itemize}
+\item \textbf{Fourier Cosine Series:} Let $f$ : $\R \rightarrow \R$ be an even 2-periodic function. The Fourier
+cosine series of $f$ is given by
+$$ f(x) \approx \frac{1}{2} \hat{f_0} + \sum_{n=1}^{\infty}  \hat{f_n} \cos (n\pi x)$$
+$$ \hat{f_n} = \int_{-1}^{1} \cos (n\pi x) f(x) dx = 2 \int_{0}^{1} \cos (n\pi x) f(x) dx$$ 
+
+\item \textbf{Fourier Cosine Series:} Let $f$ : $\R \rightarrow \R$ be an odd 2-periodic function. The Fourier
+sine series of $f$ is given by
+$$ f(x) \approx  \sum_{n=1}^{\infty}  \hat{f_n} \sin (n\pi x)$$
+$$ \hat{f_n} = \int_{-1}^{1} \sin (n\pi x) f(x) dx = 2 \int_{0}^{1} \sin (n\pi x) f(x) dx$$ 
+\end{itemize}
+
+\subsection{Fourier Series on Arbitrary Intervals}
+It is simple to now generalize to functions of arbitrary periods. Given a $2a$-periodic function $f$ : $\R \rightarrow \R$, the Fourier series of $f$ results from simple adjustments of the arguments of the sine and cosine functions to the period of $2a$.
+$$ f(x) \approx \frac{1}{2} a_0 + \sum_{n=1}^{\infty} \left( a_n \cos \left( \frac{n\pi x}{a}\right) + b_n \sin (\left( \frac{n\pi x}{a}\right) \right)$$
+with the following coefficients $a_n$ and $b_n$
+$$ a_n =   \frac{1}{a}\int_{-a}^{a} \cos \left( \frac{n\pi x}{a}\right) f(x) dx,  \quad n=0, 1,2, \cdots$$
+$$ b_n =  \frac{1}{a} \int_{-a}^{a} \sin \left( \frac{n\pi x}{a}\right) f(x) dx,  \quad n=1,2,3, \cdots$$
+The same orthogonality relationships hold 
+$$ \frac{1}{a} \int _{-a}^{a} \sin (n\pi x)\sin (n\pi x)dx = \delta_{nm} $$ 
+$$ \frac{1}{a} \int _{-a}^{a} \cos (n\pi x)\cos (n\pi x)dx =\delta_{nm} $$ 
+$$ \frac{1}{a} \int _{-a}^{a} \sin (n\pi x)\cos (n\pi x)dx =0 $$ 
+
+
+\pagebreak
+
+
+
+\section{Fourier Series - Analysis}
+
+\subsection{Convergence of Fourier Series}
+There are two important questions to ask when analysing Fourier series: \textit{do they converge} and if yes, \textit{in what sense do they converge}. There are two key theorems:
+\begin{itemize}
+\item \textbf{Pointwise Convergence of Fourier Series:} Let $f$ be a piecewise continuous function
+with a period 2, and $s_N$ be the associated truncated Fourier series. Then for any fixed $x \in \R$ ,
+$$ s_N(x) \rightarrow \frac{1}{2} \left[ f(x^-)+f(x^+)\right] \text{  as  } N \rightarrow \infty$$
+\item \textbf{Uniform Convergence of Fourier Series:} Let $f$ be a continuous and piecewise continuous;y differentiable function
+with a period 2, and $s_N$ be the associated truncated Fourier series. Then for any fixed $x \in \R$ ,
+$$ \max_{x \in \R} |f(x) - s_n(x)| \rightarrow 0 \text{  as  } N \rightarrow \infty$$
+\end{itemize}
+\subsection{Convergence of Fourier Series on Finite Intervals}
+For each type of periodic extension, there are unique continuity requirements for uniform convergence, summarized below:
+\begin{itemize}
+\item \textbf{Fourier Series:} For $f$ : $(-a,a)\rightarrow \R$, the endpoint values should match $f(-a^+) = f(a^-)$
+\item \textbf{Sine Series:} For $f$ : $(0,a)\rightarrow \R$, the endpoint values should vanish $f(0^+) = f(a^-)=0$
+\item \textbf{Cosine Series:} For $f$ : $(0,a)\rightarrow \R$, there are no additional endpoint conditions
+\end{itemize}
+\subsection{Uniform and Absolute Convergence}
+We can provide an alternative condition for uniform convergence in terms of the Fourier series coefficients called \textbf{absolute convergence}. Given the function is periodic by definition and has an associated Fourier series, it converges uniformly to $f$ if
+$$ \sum_{n=1}^{\infty} \left( |a_n| + |b_n| \right) < \infty $$
+\subsection{Differentiation of Fourier Series}
+We summarize a few properties of Fourier series under differentiation:
+\begin{itemize}
+\item \textbf{Differentiation:} Let $f$ be a continuous periodic function with piecewise continuously differentiable derivative $f'$. Then the Fourier series of $f'$ can be obtained by term-by-term differentiation of the Fourier series of $f$. If$$ f(x) \approx \frac{1}{2} a_0 + \sum_{n=1}^{\infty} \left( a_n \cos (n\pi x) + b_n \sin (n\pi x) \right)$$ then, the derivative is given by
+$$ f'(x) \approx  \sum_{n=1}^{\infty} \left( -a_n n \pi \sin (n\pi x) + b_n n\pi \cos (n\pi x) \right)$$
+For any fixed $x \in \R$ ,the differentiated series converge to 
+$$\frac{1}{2} \left [f'(x^-)+f'(x^+) \right]$$
+\item \textbf{Uniform Convergence of Derivatives:} Let $f$ be a periodic function with Fourier coefficients $a_n$ and $b_n$. Suppose
+$$ \sum_{n=1}^{\infty} \left( |n^ka_n| + |n^kb_n| \right) < \infty $$
+for some $k \in N>0$. Then $f$ has a continuous derivatives $f',  \cdots f(k)$, whose Fourier series are obtained by term-by-term differentiation of the Fourier series of $f$.
+\end{itemize}
+
+\pagebreak
+
+
+\section{Sturm-Liouville Theory}
+We use the Sturm-Liouville Theory to draw a connection between Fourier series and eigenproblems we encounter. The regular Sturm-Liouville problem is given
+by
+ \begin{align*}
+-(p \phi ') + q\phi &= \lambda w \phi \quad \text{  in  } (a,b), \\
+\alpha_1 \phi (a) + \alpha_2 \phi '(a) &= 0, \\
+\beta_1 \phi (b) + \beta_2 \phi '(b) &= 0, 
+ \end{align*}
+We now introduce important properties of the Sturm-Liouville problem and its solutions:
+\begin{itemize}
+\item \textbf{Self-Adjointness of Sturm-Liouville Operator:} The Sturm-Liouville operator $ L \equiv - \frac{d}{dx} + p (\frac{d}{dx}) + q$ is self-adjoint in the sense that 
+$$ (Lw, v) = (w, Lv) $$ 
+for any complex-valued functions $w$, $v$ $\in$ $C^2([a,b])$ that satisfy the boundary conditions.
+\item \textbf{Realness of Sturm-Liouville Eigenvalues:} All eigenvalues of the regular Sturm- Liouville problem are real.
+\item \textbf{Orthogonality of Sturm-Liouville Eigenfunctions:} The eigenfunctions of the regular Sturm-Liouville problem associated with two distinct eigenvalues $\lambda_n$ and $\lambda_m$ are orthogonal with respect to the weight $w$ : $[a, b] \rightarrow \R_{>0}$ in the sense that
+$$ \int_a^{b} w \phi_m \phi_n dx = 0 \quad \quad n \neq m $$
+\item \textbf{Infinite Eigenvalues:} The regular Sturm-Liouville problem has an infinite number of eigenvalues and $\lambda_n \rightarrow \infty as n \rightarrow \infty$.  Moreover, if $w > 0$ on $[a,b]$ and $\alpha_1 \geq 0$, $\alpha_2 \geq 0$, $\beta_1 \geq 0$, and $\beta_2 \geq 0$ then $\lambda_n \geq 0$ for all $n$
+\end{itemize}
+The general solution to this problem when $\lambda_n > 0$ is given by
+$$ \phi_n(x) = A_n \cos ( \sqrt{\lambda_n} x) + B_n \sin ( \sqrt{\lambda_n} x)$$
+\pagebreak
+
+
+\section{Heat Equation - Introduction}
+
+\subsection{Derivation of the Heat Equation}
+The heat equation is derived on the basis of three principles:
+\begin{enumerate}
+\item The thermal energy density $ e$ is given by $e=\rho cu$, where $\rho >0$ is the density, $c>0$ is the specific heat capacity,  and $u$ is the temperature.
+\item \textit{Fourier’s Law:} The rate of heat transfer is proportional to the temperature gradient, $q = -k \nabla u$, where $q$ is the heat flux and $k > 0$ is the thermal conductivity.
+\item \textit{Conservation of Energy:} The change in the thermal energy in a volume over a time interval $\Delta t$ is equal to the net heat entering the volume over $\Delta t$.
+\end{enumerate}
+Using these principles, we arrive at the general form of the heat equation where $\kappa = \frac{k}{\rho c}$
+$$ \frac{\partial u}{\partial t} = \kappa \Delta u \quad \text{ in } \Omega \times \R_{>0}$$
+The non-homogeneous form can be expressed as 
+$$ \frac{\partial u}{\partial t} = \kappa \Delta u + f \quad \text{ in } \Omega \times \R_{>0}$$
+
+\subsection{Boundary and Initial Conditions}
+There are three different types of boundary conditions for the heat equation:
+\begin{itemize}
+\item \textbf{Dirichlet:} If the temperature at the boundary is prescribed, we obtain a boundary condition of the form $ u = u^b$ on  $\Gamma_D \times \R_{>0}$, where $u^b$ is the prescribed boundary temperature and $\Gamma_D \subset \partial \Omega$ is the Dirichlet boundary. If $u^b = 0$, then the condition is called a \textit{homogeneous Dirichlet boundary condition}; otherwise it is a \textit{nonhomogeneous Dirichlet boundary condition}.
+\item \textbf{Neumann:} If the heat flux at the boundary is prescribed, we obtain a boundary condition of the form $\nu\cdot (k\nabla u)=q^b$ on$\Gamma_N \times \R_{>0}$, where $q^b$ is the prescribed boundary heat flux into the domain and $\Gamma_N \subset \partial \Omega$ is the Neumann boundary.  Note $q^b > 0$ indicates heat transfers into the domain and $q^b < 0$ indicates heat transfers out from the domain.  If $q^b = 0$, then the condition is called a \textit{homogeneous Neumann boundary condition}; otherwise it is a \textit{nonhomogeneous Neumann boundary condition}.
+\item \textbf{Robin:} If a boundary is exposed to a different medium, then the heat is transferred from/to the surrounding medium.  Newton’s law states that the rate of this heat transfer is proportional to the difference in the temperate of the material and the surrounding. The associated boundary condition is of the form
+$\nu\cdot (k\nabla u)= h(u^{env} - u)$ on $\Gamma_R \times \R_{>0}$,
+where $h > 0$ is the heat transfer coefficient,  $u^{env}$ is the temperature of the environment, and $Gamma_R \subset \partial \Omega$ is the Robin boundary. The Robin boundary condition depends on both the value and derivative of the state $u$. If $u^{env}$ is 0, then the condition is called a \textit{homogeneous Robin boundary condition}; otherwise it is a \textit{nonhomogeneous Robin boundary condition}.
+\end{itemize}
+
+\subsection{Nondimensionalization}
+It is convenient in solving PDEs to nondimensionalize the equations. To do so we introduce the following scales:
+\begin{itemize}
+\item \textbf{Length Scale:} We want to scale the domain length $L$. The nondimensionalized spatial coordinate is $\tilde{x} = x/L$ and the nondimensionalized domain is $\tilde{\Omega}  = (0, 1)$
+
+\item \textbf{Time Scale:} We choose for our time scale $T \equiv \frac{L^2}{\kappa}$. The nondimensionalized time is $\tilde{t} = \frac{t}{L^2/\kappa}$
+\item \textbf{Temperature Scale:} We pick the temperature scale $U \equiv \max(g)$. The nondimesionalized temperature is $\tilde{u}  = \frac{u}{\max(g)}$. The nondimensional initial temperature is bounded by 1.
+
+\end{itemize}
+
+\subsection{Maximum and Minimum Principles}
+The maximum principle facilitates the verification of uniqueness and stability stating that the solution to the heat equation attains the \textbf{maximum} somewhere on the parabolic boundary $\Gamma$. \\ \\
+Formally, suppose we are given an open spatial domain $\Omega$ and a time interval $I \equiv (t_0, t_f ]$, where $\Omega$ may be unbounded and $t_f$ may be infinite. We define a parabolic cylinder $\Omega \times I$ and a parabolic boundary 
+$$ \Gamma \equiv (\Omega \times \{t = t_0 \}) \cup (\partial \Omega \times I) = (\Omega \times I) \ (\Omega \times I)$$which includes the spatial boundary and initial time “boundary” (but not the final time “boundary”). If $u$ satisfies the heat equation then
+$$ \max_{(x,t) \in \overline{\Omega \times I}} u(x, t) = \max_{(x,t) \in \Gamma} u(x, t)$$
+We also know that if there exists any point $(x^{\star}, t^{\star})$ in $\Omega \times I$,  such that $$ u(x^{\star}, t^{\star}) = \max_{(x,t) \in \Gamma} u(x, t)$$
+then $u$ is constant in $\Omega \times I$. Likewise the minimum principle tells us that the solution to the heat equation also attain the \textbf{minimum} value somewhere on the parabolic boundary $\Gamma$
+$$ \min_{(x,t) \in \overline{\Omega \times I}} u(x, t) = \min_{(x,t) \in \Gamma} u(x, t)$$
+
+\pagebreak
+
+
+\section{Heat Equation - Separation of Variables}
+\subsection{Homogeneous Solution Method}
+To obtain a solution to the heat equation given an initial-boundary value problem, we use \textit{separation of variables }and the \textit{principle of superposition}. The general solution method is as follows: 
+\begin{enumerate}
+\item We need to separate the problem into two sub-problems to develop a solution in the form: 
+$$ u_n(x,t) = \phi_n(x) T_n(t), \quad n=1,2,3, \cdots$$
+To do so, the PDE is split to obtain two separate ODEs:
+$$ \frac{T_n'}{T_n} = \frac{\phi_n''}{\phi_n} = -\alpha_n$$
+\item First, we solve the spatial problem $\phi_n'' = -\alpha_n \phi_n$.  From the boundary conditions and Sturm-Liouville theory, the general solution could be identified as:
+$$ \phi_n(x) = A_n \cos ( \sqrt{\alpha_n} x) + B_n \sin ( \sqrt{\alpha_n} x)$$
+\item Next, we solve the associated temporal problem, $T_n' = -\lambda_n^2 T_n$, where $\lambda_n = \sqrt{-\alpha_n}$. The solution to this ODE is given by the following: 
+$$ T_n(t) = \exp(-\lambda^2 t)$$
+\item Combine the two solutions together after applying the necessary boundary conditions (not initial conditions yet) and appeal to the superposition principle, to obtain:
+$$u(x,t) =  \sum_{n=1}^{\infty} a_n u_n(x,t) =  \sum_{n=1}^{\infty} a_n \phi_n(x) T_n(t), \quad n=1,2,3, \cdots$$
+\item Now seeking the coefficient $a_n$, we apply the initial conditions and solve the integral:
+$$ a_n = \hat{g_n} = \int_0^1 g(x) \sin(\alpha x)\quad \text{or} \quad a_n = \hat{g_n} = \int_0^1 g(x) \cos(\alpha x)  $$
+The bounds of integration and integrand depend on the solutions obtained prior
+\item Finally, piecing it all together, we obtain a final series representation of our solution
+$$u(x,t) =  \sum_{n=1}^{\infty} \hat{g_n} u_n(x,t) =  \sum_{n=1}^{\infty} a_n \phi_n(x) T_n(t), \quad n=1,2,3, \cdots$$
+\end{enumerate}
+This same approach can be applied to cases with Dirichlet, Neumann, and Mixed boundary conditions, although interpretations of the final solution may vary. The solution with homogeneous Dirichlet boundary condition is given by Fourier sine series.  All modes decay in time,  and higher spatial mode decay more rapidly in time. The solution with homogeneous Neumann boundary condition is given by Fourier cosine series. The total energy is conserved in time.
+\pagebreak
+
+\subsection{Nonhomogeneous Source Term}
+Given a nonhomogeneous source term, where $\frac{\partial u}{\partial t} - \frac{\partial ^2 u}{\partial x^2} = f$, the solution method is not much different than  what is described above. 
+\begin{enumerate}
+\item First we perform the same separation of variables approach for when $f=0$ to obtain 
+$$ u(x,t) = \sum_{n=1}^{\infty} \hat{u}_n \sin (n\pi x ) \quad \text{ or } \quad u(x,t) = \sum_{n=1}^{\infty} \hat{u}_n \cos (n\pi x ) $$
+depending on whether the conditions are homogeneous Dirichlet or Neumann.
+\item Substitute the fourier representation of $u$ into the PDE to get
+$$\sum_{n=1}^{\infty}  [\hat{u}_n'(t) + n^2 \pi^2  \hat{u}_n(t)] \sin (n\pi x ) = f(x,t)$$
+\item Multiply by $2 \sin (m \pi x)$, integrate from 0 to 1 and appeal to orthogonality to reach
+$$ \hat{u}_m'(t) + m^2 \pi^2  \hat{u}_m(t)  = \hat{f}_m(t)$$
+\item Solve for the coefficient $\hat{f}_m(t)$ by integrating
+$$ \hat{f}_m (t) = 2 \int_0^1 f(x,t) \sin (n \pi x) dx \quad m=1,2, \cdots  $$ 
+\item Substitute the initial conditions
+$$ u(x, t=0) = \sum_{n=1}^{\infty} \hat{u}_n (t=0) \sin (n\pi x) dx = g(x)$$
+\item The resulting initial value problem can be solved using an integrating factor. Since we have that $\hat{u}_n(t=0) = \hat{g}_n$ we can solve for the coefficient $\hat{u}_n$
+$$ \hat{u}_n (t) = \hat{g}_n \exp (n^2 \pi^2 t ) + \int_{\tau =0}^{t} \exp (n^2 \pi^2 (t- \tau) ) \hat{f}_n(\tau) d \tau $$
+\item The final solution can now be expressed as follows
+$$ u(x,t) = \sum_{n=1}^{\infty} \hat{u}_n \sin (n\pi x ) $$
+
+
+\end{enumerate}
+
+\subsection{Nonhomogeneous Boundary Conditions}
+Given a nonhomogeneous boundary condition, we  introduce a function $u^b$ that satisfies the boundary condition and the remainder of the solution $w$ such that $u = u^b +w$. We use this to transform the problem into one with a nonhomogeneous source term but homogeneous boundary conditions, which we just solved above.
+
+
+\pagebreak
+
+\section{Heat Equation - Fundamental Solution}
+
+\subsection{Fundamental Solution in $\R \times \R_{>0}$}
+The fundamental solution of the heat equation in $\R \times \R_{>0}$ is given by
+$$ \Phi(x,t) \equiv  \frac{1}{\sqrt{4\pi t}} \exp \left( \frac{-x^2}{4t} \right) \quad t>0$$ Using this fundamental solution, the solution to the initial value problem with $u(x, t = 0) = g(x)$ can be represented as
+$$u(x,t) = \int_{\infty}^{\infty}  \Phi(x - \xi, t) g(\xi) d(\xi) = \int_{\infty}^{\infty}  \frac{1}{\sqrt{4\pi t}} \exp \left( \frac{-(x-\xi)^2}{4t} \right) g(\xi) d(\xi)$$
+There are some key observations about this that should be noted:
+\begin{itemize}
+\item \textbf{Isotropy:} The fundamental solution is even in $x$ : ($ \Phi (x, t) = \Phi (-x, t)$)
+\item \textbf{Conservation of Thermal Energy:} The spatial integral of the fundamental solution is given by $ \int_{\infty}^{\infty} \Phi (x, t) dx = 1$ confirming that energy is conserved
+\item \textbf{Infinite Propagation Speed:} Any change in the initial condition at some point$\xi$ is felt for any $x$ immediately for $t > 0$, regardless of how far apart $x$ and $\xi$ are \textit{(disturbances propagate at infinite speed)}
+\item \textbf{Exponential Decay of Influence:} If $t << 1$, then the exponential in the integrand evaluates to nearly zero except for $\xi \approx x$. The initial condition $g(x)$ will have a significant effect on the solution $u(\cdot , t)$ only in the vicinity of $x$ for small $t$
+\item \textbf{Positivity:} If $g \geq 0$ but $g\neq 0$ then the solution $u$ is positive for all points $x \in \R$ and times $t > 0$. In words, if the initial temperature is non-negative everywhere and positive somewhere, then the temperature is positive everywhere at any later time no matter how small.
+\item \textbf{Smoothness:} It can be shown that the solution to the heat equation is smooth; the solution is infinitely differentiable in both space and time.
+\end{itemize}
+
+\subsection{Homogeneous Dirichlet and Neumann  Boundary Conditions}
+Considering the heat equation on the positive half of the real line, $\R_{>0} \times \R{>0}$, we use the \textbf{method of reflections} to extend the solution to the whole real line. We can do this since the solution is smooth (continuous and differentiable everywhere). For homogeneous Dirichlet boundary conditions, we use the method of \textit{odd} extensions and for homogeneous Neumann boundary conditions, we use the method of \textit{even} extensions. 
+
+
+\pagebreak
+
+\section{Heat Equation - Finite Difference Method}
+
+\subsection{Discretization in Space and Time}
+To approximate the solution to the heat equation, we first discretize our space-time domain $(x_L, x_R) \times (0, t_f )$. To this end, we introduce the spatial computation grid comprises $n + 1$ points:
+$$x_L \equiv x_0 <x_1 < \cdots < x_{n-1} <x_n \equiv x_R$$
+ For simplicity we assume that the grid points are equispaced so that $x_i = i \Delta x$, $i = 0,1\cdots n$, where $\Delta x \equiv (x_R - x_L)/n$. We similarly introduce a temporal computational grid comprises $J + 1$ points:
+$$0 \equiv t^0 <t^1 < \cdots < t^{J-1} <t^J \equiv t_f$$
+For simplicity, we again assume that time intervals are equispaced so that $t^j = j \Delta t$, $j = 0,1\cdots J$, where $\Delta t \equiv t_f/J$
+The goal is to approximate the solution at the space-time grid points $u(x_i,t^j)$
+by a computational approximation $\tilde{\tilde{u}}_i^j$ so that
+$$u(x_i,t^j) \approx \tilde{\tilde{u}}_i^j, \quad i = 0,1\cdots n, \quad  j= 0,1 \cdots J$$
+
+\subsection{Finite Difference in Space}
+The numerical approximation of PDEs requires the approximation of the (spatial) derivatives that appear in the PDEs.  We cover the first and second derivative central difference formulas as well as some useful properties.
+\begin{itemize}
+\item \textbf{First Derivative Central Difference Formula:} The formula is given by 
+$$ f'(x_i) \approx \frac{f_{i+1}- f_{i-1}}{2\Delta x}$$ 
+We can look at the respective truncation error. Given a thrice continuously differentiable function $f$
+$$ \left|  f'(x_i) - \frac{f_{i+1}- f_{i-1}}{2\Delta x} \right| \leq \frac{1}{6} \max_{\xi \in [x_{i-1}, x_{i+1}]} \left|f'''(\xi) \right| \Delta x^2 $$
+This formula is second order accurate, where the error, $E$ is bounded by $E < C\Delta x^2$ for some $C$ independent of $\Delta x$
+\item \textbf{Second Derivative Central Difference Formula:} The equation is given by $$ f''(x_i) \approx \frac{f_{i+1}-2 f_i+ f_{i-1}}{2\Delta x^2}$$ We can also look at the respective truncation error. Given a function $f$ with a continuous fourth derivative:
+$$ \left|  f''(x_i) - \frac{f_{i+1}-2 f_i + f_{i-1}}{2\Delta x} \right| \leq \frac{1}{12} \max_{\xi \in [x_{i-1}, x_{i+1}]} \left|f^{(4)}(\xi) \right| \Delta x^2 $$
+\end{itemize}
+
+
+\subsection{Semi-Discrete Equation}
+We want to apply the finite difference formulas with the boundary conditions to form a system of equations. For example, given a Neumann boundary condition on the left, $u = h_L(x)$, and a Dirichlet boundary condition on the right $\frac{\partial u}{\partial x} = h_r(x)$, the system of equations would look like:
+\begin{align*}
+\frac{d \tilde{u}_1}{dt} (t) - \frac{\tilde{u}_2 (t) - 2\tilde{u}_1(t)}{\Delta x^2} &= \hat{f}_1(t) + \frac{h_L(x)}{\Delta x^2} \\ 
+\frac{d \tilde{u}_i}{dt} (t) - \frac{\tilde{u}_i(t) - 2\tilde{u}_i (t) + \tilde{u}_{i-1}(t)}{\Delta x^2} &= \hat{f}_i(t)\\ 
+\frac{d \tilde{u}_n}{dt} (t) - \frac{-2\tilde{u}_n (t) + 2\tilde{u}_{n-1}(t)}{\Delta x^2} &= \hat{f}_n(t) + \frac{2h_R(x)}{\Delta x} \\ 
+\tilde{u}_i(t=0) &= \hat{g}_n  
+\end{align*}
+We can then write this system out in matrix form as follows:
+$$ \frac{d \tilde{u}_n}{dt} + \hat{A} \tilde{u}(t) = \hat{f}(t) + \hat{h}(t)$$
+
+\subsection{Temporal Discretization}
+We want to apply a time discretization to the semi-discrete form We use the Crank-Nicolson method. We're interested in a sequence of approximations $\tilde{\tilde{u}}^0, \cdots, \tilde{tilde{u}}^J$ such that
+$$ \tilde{u}(t^j) \approx \tilde{\tilde{u}}^j, \quad j=0,1,\cdots J$$
+The Crank-Nicolson approximation is given by
+\begin{align*}
+\frac{\tilde{u}^{j}-\tilde{u}^{j-1}}{\Delta t} &= \frac{1}{2} (F(\tilde{u}^j, t^j) + F(\tilde{u}^{j-1}, t^{j-1}), \quad \text{ in } \R^n, \; j =1,2,\cdots, J\\
+\tilde{u}^{j=0} &= \hat{g}, \quad \text{ in } \R^n
+\end{align*}
+
+\subsection{Fully Discrete Equation and Solution}
+Using the Crank-Nicolson method we can arrive at the fully discrete solution. This can then be solved in MATLAB. If question about this comes up, see (8.7) and (8.8)
+
+\pagebreak
+
+\section{Laplace's Equation - Introduction}
+We look at two second order linear equations:  Laplace's equation given by $-\Delta u = 0$ in $\Omega \subset \R^n$ and Poisson's equation given by $-\Delta u = f$ in $\Omega \subset \R^n$. Laplace's equations is homogeneous while Laplace's equation is nonhomogeneous. Both equations are elliptic. \\ \\ 
+Let $\Omega \subset R_n$.  A function $u$: $\Omega \rightarrow \R$ that satisfies Laplace’s equation $-\Delta u = 0$ in $\Omega$ is called a \textbf{harmonic function}.
+
+\subsection{Mean Value Formulas}
+Mean value formulas are an important property of harmonic functions.  We summarize some key definitions and theorems pertaining to these below:
+\begin{itemize}
+\item \textbf{Ball in $\R^n$}: A ball of radius $r$ and centered at $x_0$ is an open subset of $R_n$ given by $B(x_0,r) \equiv \{ x \in R_n | \| {x-x_0} \|^2 < r \}$, where $\|\cdot \|^2$ is the Euclidean norm in $R_n$. Its boundary is $\partial B (x_0, r) =  \{x \in R_n | \|x- x_0\|^2 = r \}$. The volume of the ball is denoted by $|B(x_0,r)|,$ and the surface area of the ball is denoted by $| \partial B(x_0,r)|$.
+\item \textbf{Mean Value Formula for Harmonic Functions}: If $u$ is harmonic in $\Omega$, then for any ball $B(x_0, r) \subset \Omega$ and the associated boundary $\partial B(x_0,r)$ we have
+$$ u(x_0) = \frac{1}{|B(x_0,r)|} \int_{B(x_0,r)} udx = \frac{1}{|\partial B(x_0,r)|} \int_{\partial B(x_0,r)} uds$$
+\item \textbf{Converse to Mean Value Theorem}: If $u \in C^2(\Omega)$ satisfies the following for all balls $B(x_0, r) \subset \Omega$, then $u$ is harmonic.
+$$ u(x_0) = \frac{1}{2 \pi r} \int_{\partial B(x_0,r)} u(s) ds$$
+\end{itemize}
+
+\subsection{Maximum and Minimum Principles}
+Similar to the heat equation, Laplace’s equation also satisfies certain maximum and minimum principles. \\ \\ The \textbf{maximum principle} tells us that the maximum value of the solution is attained on the boundary.  Formally, we let $u$ be be a harmonic function in a connected open domain $\Omega \subset R^2$. Then 
+$$ \max_{\bar{\Omega}} u =  \max_{\partial \Omega} u $$ Additionally, if there exists a point $x^{\star} \in \Omega$ satisfying the following then we know that $u$ is constant in $\Omega$ $$ u(x^{\star}) = \max_{\bar{\Omega}} u$$  
+The \textbf{minimum principle} tells us that the minimum value of the solution is also attained on the boundary.  We let $u$ be be a harmonic function in a connected open domain $\Omega \subset R^2$. Then 
+$$ \min_{\bar{\Omega}} u =  \min_{\partial \Omega} u $$ Additionally, if there exists a point $x^{\star} \in \Omega$ satisfying the following then we know that $u$ is constant in $\Omega$ $$ u(x^{\star}) = \min_{\bar{\Omega}} u$$  
+
+\subsection{Uniqueness and Uniform Stability}
+Using the maximum principle we can verify two of the conditions of well-posedness: uniqueness and stability.  These are analogous to the heat equation. 
+\begin{itemize}
+\item \textbf{Uniqueness:}  Let $g \in C(\partial \Omega)$. There exists at most one solution $u \in C^2(\Omega) \cap C(\bar{\Omega})$ to the boundary value problem:
+\begin{align*}
+- \Delta u &= 0 \quad \text{ in } \Omega \\
+u &=g \quad \text{ on } \partial \Omega 
+\end{align*}
+\item  \textbf{Stability:} Let $u_1$ and $u_2$ be the solutions to the boundary value problems associated with boundary data $g_1$ and $g_2$, respectively:
+\begin{align*}
+- \Delta u_i &= 0 \quad \text{ in } \Omega \\
+u_i &=g_i \quad \text{ on } \partial \Omega 
+\end{align*}
+\end{itemize}
+
+\pagebreak
+
+\section{Laplace's Equation - Separation of Variables }
+We use separation of variables again to solve Laplace's equation. In the class example, we look for the solution on a rectangle, where it should be of the form
+$$ u_n(x,y) = X_n (x; C_n, D_n)Y_n(y), \quad n=1,2,3, \cdots $$
+We then appeal to the superposition principle again and we obtain the form 
+$$ u_n(x,y) = \sum_{n=1}^{\infty}  X_n (x; C_n, D_n)Y_n(y), \quad n=1,2,3, \cdots $$
+The class notes had some complicated examples, so look there if needed.
+
+\pagebreak
+
+\section{Laplace's Equation - Fundamental Solution and Green's Functions}
+
+\subsection{Fundamental Solution}
+The fundamental solution to Laplace’s equation is the function $\Phi$ : $\R^n \rightarrow \R$ such that
+$$ - \Delta \Phi = \delta \quad \text{ in } \R^2$$
+where $\delta$ is the \textbf{dirac-delta} function. The solutions are given by 
+\[ \Phi(x) =  
+ \begin{cases} 
+      -\frac{1}{2} \|x \| & n=1 \\
+      -\frac{1}{2 \pi} \log \|x \| & n=2 \\
+      \frac{1}{4 \pi \|x \| } & n=3  \\
+      \frac{1}{\sigma_n (n-2) \|x \|^{n-2} } & n\geq 4 
+   \end{cases}
+\]
+where $\sigma^n$ is the surface area of the $n$-dimensional ball unit ball, and $\|x \| = \sqrt{x_1^2 + \cdots + x_n^2}$
+
+\subsection{Poisson's Equation in  $\R^2$}
+The fundamental solution can now be used to solve Poission's equation in $\R^2$. Suppose $f$ : $\R^n \rightarrow \R$ is twice continuously differentiable and has a compact support. Then a solution to Poisson’s problem can be expressed as
+$$ u(x) = \int _{\R^n} \Phi(x-\xi) g(\xi) d\xi $$ 
+where $\Phi$ : $\R^n \rightarrow \R$ is the fundamental solution to Laplace's equation.
+
+\subsection{Green's Function}
+A Green’s function in $\Omega$ is a function $G$ : $\Omega \times \Omega \rightarrow \R$ that satisfies, for each fixed $\xi \in \Omega$,
+$$ -\Delta G(x, \xi) =\delta(x-\xi) \quad \forall \; x \in \Omega $$
+$$ G(x, \xi) = 0 \quad \forall \; x \in \partial \Omega $$
+There are a few theorems and properties worth noting:
+\begin{itemize}
+\item \textbf{Green's Second Identity:} For all $w, u \in C^2(\Omega)$,
+$$ \int_{\Omega} (w\Delta u - u \Delta w ) dx = \int_{\partial \Omega} (w (\nu \cdot \nabla u) - u (\nu \nabla \ w ) ds $$
+\item \textbf{Symmetry of Green's Function:} For any $x$, $\xi \in \Omega$, $ x \neq \xi$,  $$ G(x, \xi) = G(\xi, x) $$
+\item \textbf{Green's Representation Formula:} Let $G$ : $\Omega \rightarrow \R$ be the Green’s function associated with a domain $\Omega$. Then the solution to the Poisson equation can be expressed as
+$$ u(x) = \int_{\Omega} G(x, \xi) f(\xi) d\xi - \int_{\partial \Omega} \nu \cdot \nabla_{\xi} G(x, \xi) g(\xi) d\xi  $$
+\end{itemize}
+
+\subsection{General Formulation of Green's Function}
+In general, a Green’s function can be expressed in terms of the fundamental solution $\Phi$ and a “correction function” $\Psi$. We decompose in the form 
+$$G(x, \xi) = \Phi (x-\xi) + \Psi (x, \xi) $$ After applying the Laplacian and boundary conditions to this decomposition we obtain the following relationship 
+\begin{align*}
+- \Delta_x \Psi (x, \xi) &= 0 \quad \forall \; x \in \Omega \\
+                  \Psi (x, \xi) &= - \Phi (x-\xi) \quad \forall \; x \in \partial \Omega 
+\end{align*}
+To see specific examples of Green's Function on a plane or disk, see the class notes (11.6) and (11.7).
+
+
+\pagebreak
+
+\section{Laplace's Equation - Finite Difference Method}
+We approximate the two-dimensional Poisson’s equation by a finite difference method. As we have done for the heat equation, we first introduce a computational grid over the domain $\Omega$. The grid points are given by
+$$ (x_i, y_i) = (i\Delta x, j \Delta y), \quad i,j = 0,1, \cdots n+1$$
+where $\Delta x = \Delta y = h = \frac{1}{n + 1}$ is the spacing between any two grid points. The approximation of the solution is then
+$$\tilde{u}_{i,j} \equiv \tilde{u}(x_i, y_j), \quad i,j=0,1, \cdots n+1$$
+Applying the second order central difference formula, we get 
+$$ \left. \frac{\partial^2 u}{\partial x^2} \right|_{i,j} \approx \frac{\tilde{u}_{i+1,j} - 2\tilde{u}_{i,j} + \tilde{u}_{i-1,j}}{\Delta x^2}$$
+$$ \left. \frac{\partial^2 u}{\partial y^2} \right|_{i,j} \approx \frac{\tilde{u}_{i+1,j} - 2\tilde{u}_{i,j} + \tilde{u}_{i-1,j}}{\Delta y^2}$$
+Combining these approximations together, we can yield 
+$$- \frac{\tilde{u}_{i+1,j} - 2\tilde{u}_{i,j} + \tilde{u}_{i-1,j}}{\Delta x^2} - \frac{\tilde{u}_{i+1,j} - 2\tilde{u}_{i,j} + \tilde{u}_{i-1,j}}{\Delta y^2} = \hat{f}_{i,j}, \quad i,j = 1,2, \cdots n$$ where $\hat{f}_{i,j}, = f(x_i, y_i)$ and the homogeneous Dirichlet conditions are given by
+\begin{align*}
+ \tilde{u}_{0,j} &= \tilde{u}_{n+1, j} = 0, \quad j=0,1, \cdots n+1 \\
+ \tilde{u}_{0ij} &= \tilde{u}_{i, n+1} = 0, \quad i=1, 2,\cdots n
+\end{align*}
+This can again be expressed in matrix form 
+$$ hat{A} \tilde{u} = \hat{f}$$
+We also note that if the exact solution is sufficiently regular, then the error is bounded by
+$$ \|u-\tilde{u} \|_{\infty} = \max_{i,j=0,1, \cdots n} | u(x_i, y_i) - \tilde{u}_{i,j} | \leq C\Delta x^2 + D \Delta y^2 $$
+\pagebreak
+
+\section{Wave Equation - Introduction }
+We're now looking at the wave equation, which is a hyperbolic equation. The wave equation is expressed as follows:
+$$ \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2} $$
+where $c$ is the wave speed. 
+
+\subsection{Boundary Conditions}
+We consider two types of boundary conditions for the wave equation:
+\begin{itemize}
+\item \textbf{Dirichlet:} If the pressure perturbation at the boundary is prescribed, we obtain a boundary condition of the form $u=\tilde{p}^b$ on $\Gamma_D \times \R_{>0}$.  If the pressure is fixed (\textit{there is no perturbation}), then the equation simplifies to $u = 0$.
+\item \textbf{Neumann:} Prescribing the acceleration conditions gives us $\nu \cdot \nabla u = -\rho_0 \frac{\partial \nu \cdot \tilde{v}}{\partial t} = -\rho_0 \nu \cdot \tilde{a}^b$ on $\Gamma_N \times \R_{>0}$., where $\Gamma_N$ is the Neumann boundary, and $ \tilde{a}^b$ is the prescribed acceleration of the wall. If the wall is fixed (\textit{there is no acceleration}), then the equation simplifies to $\nu \cdot \nabla u = 0$.
+\end{itemize}
+
+\subsection{Nondimensionalization}
+We introduce the following scales to nondimensionalize the wave equation:
+\begin{itemize}
+\item \textbf{Length Scale:} We want to scale the domain length $L$. The nondimensionalized spatial coordinate is $\tilde{x} = x/L$ and the nondimensionalized domain is $\tilde{\Omega}  = (0, 1)$
+\item \textbf{Time Scale:} We choose time scale $T \equiv \frac{L}{c}$. The nondimensionalized time is $\tilde{t} = \frac{t}{T}= \frac{ct}{L}$.
+\end{itemize}
+
+\subsection{Energy Conservation}
+Suppose $u$ is the solution to the wave equation on $\Omega$ with homogeneous boundary conditions.  Let $E(t)$ be the total energy at time $t$ given by
+$$ E(t) \equiv \frac{1}{2} \int_{\Omega} \left( \left( \frac{\partial u}{\partial t} \right)^2  + \nabla u \cdot \nabla u \right) dx$$
+Then the total energy is conserved:
+$$ E(t) = E(t=0) \quad \forall \; t \in \R_{>0} $$
+
+
+\pagebreak
+
+\section{Wave Equation - Separation of Variables }
+\subsection{Homogeneous Dirichlet Boundary Conditions}
+To obtain a solution to the wave equation given an initial-boundary value problem, we use the same approaches we used with the heat equation. The general solution method for homogeneous dirichlet boundary conditions is as follows: 
+\begin{enumerate}
+\item We need to separate the problem into two sub-problems to develop a solution in the form: 
+$$ u_n(x,t) = \phi_n(x) T_n(t), \quad n=1,2,3, \cdots$$
+To do so, the PDE is split to obtain two separate ODEs:
+$$ \frac{T_n''}{T_n} = \frac{\phi_n''}{\phi_n} = -\alpha_n$$
+\item First, we solve the spatial problem $\phi_n'' = -\alpha_n \phi_n$.  From the boundary conditions and Sturm-Liouville theory, the general solution could be identified as:
+$$ \phi_n(x) = A_n \cos ( \sqrt{\alpha_n} x) + B_n \sin ( \sqrt{\alpha_n} x)$$
+with the boundary values we obtain the eigenvalues $\alpha_n = n^2 \pi ^2$ and eigenfunction $\phi_n(x) = \sin(n \pi x) $.
+\item Next, we solve the associated temporal problem, $T_n'' = -\lambda_n^2 T_n$, where $\lambda_n = \sqrt{-\alpha_n}$. The solution to this ODE is given by the following: 
+$$ T_n(t) = A_n \cos ( \sqrt{\alpha_n} t) + B_n \sin ( \sqrt{\alpha_n} t)$$
+\item Combine the two solutions together and appeal to the superposition principle, to obtain:
+$$u(x,t) =   \sum_{n=1}^{\infty}  \phi_n(x) T_n(t) = \sum_{n=1}^{\infty} A_n \cos (n \pi t) \sin (n \pi x) + B_n \sin (n \pi t) \sin(n \pi x), \quad n=1,2,3, \cdots$$
+\item Now seeking the coefficients $A_n$ and $B_n$, we apply the initial conditions and solve the integrals:
+$$ A_n = \hat{g}_n = \int_0^1 g(x) \sin(n \pi x)dx \quad \text{and} \quad B_n = \frac{\hat{h}_n}{n\pi} = \int_0^1 h(x) \sin(n \pi x)dx $$
+The bounds of integration and integrand depend on the solutions obtained prior
+\item Finally, piecing it all together, we obtain a final series representation of our solution
+$$u(x,t) =  \sum_{n=1}^{\infty} \left( \hat{g}_n \cos(n \pi t) + \frac{\hat{h}_n}{n \pi} \sin (n \pi t) \right)\sin(n\pi x), \quad n=1,2,3, \cdots$$
+\end{enumerate}
+
+
+\subsection{Homogeneous Neumann Boundary Conditions}
+The general solution method for homogeneous neumann boundary conditions follows the same approach but varies slightly: 
+\begin{enumerate}
+\item We need to separate the problem into two sub-problems to develop a solution in the form: 
+$$ u_n(x,t) = \phi_n(x) T_n(t), \quad n=1,2,3, \cdots$$
+To do so, the PDE is split to obtain two separate ODEs:
+$$ \frac{T_n''}{T_n} = \frac{\phi_n''}{\phi_n} = -\alpha_n$$
+\item First, we solve the spatial problem $\phi_n'' = -\alpha_n \phi_n$.  From the boundary conditions and Sturm-Liouville theory, the general solution could be identified as:
+$$ \phi_n(x) = A_n \cos ( \sqrt{\alpha_n} x) + B_n \sin ( \sqrt{\alpha_n} x)$$
+with the boundary values we obtain the eigenvalues $\alpha_n = n^2 \pi ^2$ and eigenfunction $\phi_n(x) = \cos(n \pi x) $.
+\item Next, we solve the associated temporal problem, $T_n'' = -\lambda_n^2 T_n$, where $\lambda_n = \sqrt{-\alpha_n}$. The solution to this ODE is given by the following: 
+\[ T_n(t) =  
+ \begin{cases} 
+      \frac{1}{2} A_n + \frac{1}{2} B_nt  & n=0 \\
+      A_n \cos ( n \pi t) + B_n \sin ( n\pi t) & n\neq 0
+   \end{cases}
+\]
+\item Combine the two solutions together and appeal to the superposition principle, to obtain:
+$$u(x,t) =    \frac{1}{2} A_0 + \frac{1}{2} B_0t + \sum_{n=1}^{\infty} A_n \cos (n \pi t) \cos (n \pi x) + B_n \sin (n \pi t) \cos(n \pi x), \quad n=1,2,3, \cdots$$
+\item Now seeking the coefficients $A_n$ and $B_n$, we apply the initial conditions and solve the integrals:
+$$ A_n = \hat{g}_n = \int_0^1 g(x) \cos(n \pi x)dx \quad \text{and} \quad B_n = \hat{h}_n= \int_0^1 h(x) \cos(n \pi x)dx $$
+The bounds of integration and integrand depend on the solutions obtained prior
+\item Finally, piecing it all together, we obtain a final series representation of our solution
+$$u(x,t) =   \frac{1}{2} \hat{g}_0 + \frac{1}{2} \hat{h}_0t + \sum_{n=1}^{\infty} \left( \hat{g}_n \cos(n \pi t) + \frac{\hat{h}_n}{n \pi} \sin (n \pi t) \right)\cos(n\pi x), \quad n=1,2,3, \cdots$$
+\underline{Note}: $\hat{h}_n / n\pi = \hat{h}_n$ if $n=0$
+\end{enumerate}
+\pagebreak
+
+\subsection{d'Alembert's Formula}
+To simplify the series solution we derive d’Alembert’s formula, which reveals more properties of the wave equation.  We consider the solution for two cases: (i) $g \neq 0$ and $h = 0$ and (ii) $h \neq 0$ and $g = 0$.  We then take the superposition of the two solutions.
+\begin{itemize}
+\item \textbf{Case 1:} $g \neq 0$ and $h = 0$
+$$ u(x,t) = \sum_{i=1}^{\infty} \hat{g}_n \sin (n\pi x) \cos (n\pi t) = \frac{1}{2} \sum_{i=1}^{\infty} \hat{g}_n ( \sin (n\pi (x-t)) +  \sin (n\pi (x+t)) $$
+Since we know that $ \hat{g}_n$ are the fourier sine coefficients of $g$ we can obtain the following 
+$$ u(x,t) = \frac{1}{2} \sum_{i=1}^{\infty} \hat{g}_n ( \sin (n\pi (x-t)) +  \sin (n\pi (x+t))= \frac{1}{2} \left[ g^{o,p} (x-t) + g^{o,p} (x+t) \right] $$
+\item \textbf{Case 2:} $h \neq 0$ and $g = 0$.
+$$ u(x,t) = \sum_{i=1}^{\infty} \frac{\hat{h}_n}{n\pi} \sin (n\pi x) \sin (n\pi t) = \frac{1}{2} \sum_{i=1}^{\infty} \frac{\hat{h}_n}{n\pi} ( \cos (n\pi (x-t)) -  \cos (n\pi (x+t)) $$
+Since we know that $ \hat{h}_n$ are the fourier sine coefficients of $h$ we can obtain the following 
+$$ u(x,t) = \frac{1}{2} \sum_{i=1}^{\infty} \frac{\hat{h}_n}{n\pi} ( \cos (n\pi (x-t)) -  \cos (n\pi (x+t)) = \frac{1}{2} \int_{x-t}^{x+t} h^{o,p}(\xi) d\xi$$
+\end{itemize}
+Now we can  combine the two cases together to get the following
+$$ u(x,t) =\frac{1}{2} \left[ g^{o,p} (x-t) + g^{o,p} (x+t) \right] + \frac{1}{2} \int_{x-t}^{x+t} h^{o,p}(\xi) d\xi $$
+This is d'Alemberts formula for the wave equation with homogeneous Dirichlet boundary conditions. For homogeneous Neumann boundary conditions, we simply use the even periodic extension:
+$$ u(x,t) =\frac{1}{2} \left[ g^{e,p} (x-t) + g^{e,p} (x+t) \right] + \frac{1}{2} \int_{x-t}^{x+t} h^{e,p}(\xi) d\xi $$
+\pagebreak
+
+\section{Transport Equation - Method of Characteristics}
+The transport equation is a second order hyperbolic equation, given as: 
+$$ \frac{\partial u}{\partial t} + b\cdot \nabla u = 0$$
+\subsection{Generalized Transport Equation}
+The generalized transport equation is given as 
+$$ \frac{\partial u}{\partial t}(x,t) + b(x,u,u(x,t))\cdot \nabla u(x,t) = 0$$
+where $b$ : $\R_n \times \R_{>0} \times \R \rightarrow \R$ is the velocity field. We consider three cases:
+\begin{itemize}
+\item \textbf{Case 1:} \textit{b is constant.} This is a constant-coefficient transport equation.
+\item \textbf{Case 2:}\textit{ b depends on x and t but not on u.} This is a variable-coefficient transport equation.
+\item \textbf{Case 3:} \textit{b depends on u.} This is a nonlinear transport equation.
+\end{itemize}
+\subsection{Homogeneous Method of Characteristics}
+The characteristic equations for a homogeneous transport equation $\frac{\partial u}{\partial t} + b\cdot \nabla u = 0$ is a pair of ODEs 
+$$ \frac{dx_c}{dt}(t) =b (x_c(t),t, u_c(t)), \quad t \in \R_{>0}$$ 
+$$ \frac{du_c}{dt}(t) =0, \quad t \in \R_{>0}$$
+This could be easily integrated to obtain the solution at time $t$
+$$x_c(t) = \int_{\tau=0}^{t} b(x_c(\tau), \tau, u_c(\tau)) d\tau + x_{c,0}$$
+$$ u_c(t) = u_c(0) = u(x_c(0), 0) = g(x_c,0)$$
+\subsection{Nonhomogeneous Method of Characteristics}
+The characteristic equations for a nonhomogeneous transport equation $\frac{\partial u}{\partial t} + b\cdot \nabla u = f$ is a pair of ODEs 
+$$ \frac{dx_c}{dt}(t) =b (x_c(t),t, u_c(t)), \quad t \in \R_{>0}$$ 
+$$ \frac{du_c}{dt}(t) = f(x_c(t), t), \quad t \in \R_{>0}$$
+Similar to the homogeneous case, this could be integrated to obtain the solution 
+$$x_c(t) = \int_{\tau=0}^{t} b(x_c(\tau), \tau, u_c(\tau)) d\tau + x_{c,0}$$
+$$ u_c(t) =   \int_{\tau=0}^{t} f(x_c(\tau), \tau)d\tau + g(x_{c,0})$$
+
+\end{document}
