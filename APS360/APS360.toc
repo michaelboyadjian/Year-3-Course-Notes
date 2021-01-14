@@ -8,68 +8,68 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Artificial Pigeon}{6}% 
 \contentsline {subsubsection}{\numberline {2.1.2}Neuron Anatomy}{6}% 
 \contentsline {subsection}{\numberline {2.2}Artificial Neurons}{7}% 
-\contentsline {subsection}{\numberline {2.3}Forward Pass}{7}% 
-\contentsline {subsubsection}{\numberline {2.3.1}Error}{7}% 
+\contentsline {subsection}{\numberline {2.3}Forward Pass}{8}% 
+\contentsline {subsubsection}{\numberline {2.3.1}Error}{8}% 
 \contentsline {subsubsection}{\numberline {2.3.2}Weight Tuning}{8}% 
 \contentsline {subsection}{\numberline {2.4}Back Propagation}{8}% 
 \contentsline {subsubsection}{\numberline {2.4.1}Gradient Descent }{8}% 
 \contentsline {subsection}{\numberline {2.5}ANN Architecture}{9}% 
-\contentsline {subsection}{\numberline {2.6}ANN Training}{9}% 
+\contentsline {subsection}{\numberline {2.6}ANN Training}{10}% 
 \contentsline {subsubsection}{\numberline {2.6.1}Loss Function}{10}% 
 \contentsline {subsubsection}{\numberline {2.6.2}Optimizer}{10}% 
-\contentsline {subsubsection}{\numberline {2.6.3}Forward and Backward Pass}{10}% 
-\contentsline {subsection}{\numberline {2.7}Hyperparameter Tuning}{10}% 
-\contentsline {subsubsection}{\numberline {2.7.1}Batch Size}{10}% 
+\contentsline {subsubsection}{\numberline {2.6.3}Forward and Backward Pass}{11}% 
+\contentsline {subsection}{\numberline {2.7}Hyperparameter Tuning}{11}% 
+\contentsline {subsubsection}{\numberline {2.7.1}Batch Size}{11}% 
 \contentsline {subsubsection}{\numberline {2.7.2}Epochs}{11}% 
-\contentsline {subsubsection}{\numberline {2.7.3}Learning Rate}{11}% 
-\contentsline {subsection}{\numberline {2.8}Debugging}{11}% 
-\contentsline {subsection}{\numberline {2.9}Multiclass Classification}{12}% 
-\contentsline {section}{\numberline {3}Convolutional Neural Networks (CNNs)}{13}% 
-\contentsline {subsection}{\numberline {3.1}Large Networks}{13}% 
-\contentsline {subsection}{\numberline {3.2}Convolutional Filters}{13}% 
-\contentsline {subsection}{\numberline {3.3}Convolutional Neural Networks}{13}% 
-\contentsline {subsection}{\numberline {3.4}Pooling Layers}{14}% 
-\contentsline {subsection}{\numberline {3.5}Deeper CNN Architectures}{14}% 
-\contentsline {subsection}{\numberline {3.6}CNN Limitations}{15}% 
-\contentsline {section}{\numberline {4}Autoencoders}{16}% 
-\contentsline {subsection}{\numberline {4.1}Unsupervised Learning}{16}% 
-\contentsline {subsection}{\numberline {4.2}Autoencoder Overview}{16}% 
-\contentsline {subsection}{\numberline {4.3}Autoencoder Architecture}{16}% 
-\contentsline {subsection}{\numberline {4.4}Convolutional Autoencoder}{17}% 
-\contentsline {section}{\numberline {5}Recurrent Neural Networks (RNNs)}{18}% 
-\contentsline {subsection}{\numberline {5.1}One-Hot Encoding}{18}% 
-\contentsline {subsection}{\numberline {5.2}Word Embeddings}{18}% 
-\contentsline {subsubsection}{\numberline {5.2.1}Euclidean Distance}{18}% 
-\contentsline {subsubsection}{\numberline {5.2.2}Cosine Similarity}{18}% 
-\contentsline {subsection}{\numberline {5.3}RNN Architecture}{19}% 
-\contentsline {subsection}{\numberline {5.4}Long Term Dependencies}{19}% 
-\contentsline {subsection}{\numberline {5.5}Generative RNNs}{20}% 
-\contentsline {section}{\numberline {6}Generative Adversarial Networks (GANs)}{22}% 
-\contentsline {subsection}{\numberline {6.1}Generative Models}{22}% 
-\contentsline {subsection}{\numberline {6.2}GAN Architecture}{22}% 
-\contentsline {subsection}{\numberline {6.3}Loss Function}{23}% 
-\contentsline {subsection}{\numberline {6.4}Adversarial Attack}{23}% 
-\contentsline {section}{\numberline {7}Reinforcement Learning}{24}% 
-\contentsline {subsection}{\numberline {7.1}Overview}{24}% 
-\contentsline {subsection}{\numberline {7.2}Rewards}{24}% 
-\contentsline {subsection}{\numberline {7.3}Major Components}{25}% 
-\contentsline {subsubsection}{\numberline {7.3.1}Agent}{25}% 
-\contentsline {subsubsection}{\numberline {7.3.2}Policy}{25}% 
-\contentsline {subsubsection}{\numberline {7.3.3}Value Function}{25}% 
-\contentsline {subsubsection}{\numberline {7.3.4}Q-Function}{25}% 
-\contentsline {subsubsection}{\numberline {7.3.5}Model}{25}% 
-\contentsline {subsection}{\numberline {7.4}Value Iteration Algorithm }{26}% 
-\contentsline {subsection}{\numberline {7.5}Q-Learning Algorithm }{26}% 
-\contentsline {subsection}{\numberline {7.6}Exploration vs Exploitation}{26}% 
-\contentsline {section}{\numberline {8}Ethics and Fairness}{27}% 
-\contentsline {subsection}{\numberline {8.1}What is Ethics?}{27}% 
-\contentsline {subsection}{\numberline {8.2}Convergence of Ethical Principles}{27}% 
-\contentsline {subsection}{\numberline {8.3}Causes of Bias}{27}% 
-\contentsline {subsection}{\numberline {8.4}Defining Fairness}{27}% 
-\contentsline {subsubsection}{\numberline {8.4.1}Disparate Treatment }{27}% 
-\contentsline {subsubsection}{\numberline {8.4.2}Disparate Impact}{28}% 
-\contentsline {subsection}{\numberline {8.5}Measuring Fairness }{28}% 
-\contentsline {subsubsection}{\numberline {8.5.1}Demographic Parity }{28}% 
-\contentsline {subsubsection}{\numberline {8.5.2}Equalized Odds }{28}% 
-\contentsline {subsubsection}{\numberline {8.5.3}Individual Fairness }{28}% 
-\contentsline {subsection}{\numberline {8.6}Increasing Fairness}{28}% 
+\contentsline {subsubsection}{\numberline {2.7.3}Learning Rate}{12}% 
+\contentsline {subsection}{\numberline {2.8}Debugging}{12}% 
+\contentsline {subsection}{\numberline {2.9}Multiclass Classification}{13}% 
+\contentsline {section}{\numberline {3}Convolutional Neural Networks (CNNs)}{14}% 
+\contentsline {subsection}{\numberline {3.1}Large Networks}{14}% 
+\contentsline {subsection}{\numberline {3.2}Convolutional Filters}{14}% 
+\contentsline {subsection}{\numberline {3.3}Convolutional Neural Networks}{14}% 
+\contentsline {subsection}{\numberline {3.4}Pooling Layers}{15}% 
+\contentsline {subsection}{\numberline {3.5}Deeper CNN Architectures}{15}% 
+\contentsline {subsection}{\numberline {3.6}CNN Limitations}{16}% 
+\contentsline {section}{\numberline {4}Autoencoders}{17}% 
+\contentsline {subsection}{\numberline {4.1}Unsupervised Learning}{17}% 
+\contentsline {subsection}{\numberline {4.2}Autoencoder Overview}{17}% 
+\contentsline {subsection}{\numberline {4.3}Autoencoder Architecture}{17}% 
+\contentsline {subsection}{\numberline {4.4}Convolutional Autoencoder}{18}% 
+\contentsline {section}{\numberline {5}Recurrent Neural Networks (RNNs)}{19}% 
+\contentsline {subsection}{\numberline {5.1}One-Hot Encoding}{19}% 
+\contentsline {subsection}{\numberline {5.2}Word Embeddings}{19}% 
+\contentsline {subsubsection}{\numberline {5.2.1}Euclidean Distance}{19}% 
+\contentsline {subsubsection}{\numberline {5.2.2}Cosine Similarity}{19}% 
+\contentsline {subsection}{\numberline {5.3}RNN Architecture}{20}% 
+\contentsline {subsection}{\numberline {5.4}Long Term Dependencies}{20}% 
+\contentsline {subsection}{\numberline {5.5}Generative RNNs}{21}% 
+\contentsline {section}{\numberline {6}Generative Adversarial Networks (GANs)}{23}% 
+\contentsline {subsection}{\numberline {6.1}Generative Models}{23}% 
+\contentsline {subsection}{\numberline {6.2}GAN Architecture}{23}% 
+\contentsline {subsection}{\numberline {6.3}Loss Function}{24}% 
+\contentsline {subsection}{\numberline {6.4}Adversarial Attack}{24}% 
+\contentsline {section}{\numberline {7}Reinforcement Learning}{25}% 
+\contentsline {subsection}{\numberline {7.1}Overview}{25}% 
+\contentsline {subsection}{\numberline {7.2}Rewards}{25}% 
+\contentsline {subsection}{\numberline {7.3}Major Components}{26}% 
+\contentsline {subsubsection}{\numberline {7.3.1}Agent}{26}% 
+\contentsline {subsubsection}{\numberline {7.3.2}Policy}{26}% 
+\contentsline {subsubsection}{\numberline {7.3.3}Value Function}{26}% 
+\contentsline {subsubsection}{\numberline {7.3.4}Q-Function}{26}% 
+\contentsline {subsubsection}{\numberline {7.3.5}Model}{26}% 
+\contentsline {subsection}{\numberline {7.4}Value Iteration Algorithm }{27}% 
+\contentsline {subsection}{\numberline {7.5}Q-Learning Algorithm }{27}% 
+\contentsline {subsection}{\numberline {7.6}Exploration vs Exploitation}{27}% 
+\contentsline {section}{\numberline {8}Ethics and Fairness}{28}% 
+\contentsline {subsection}{\numberline {8.1}What is Ethics?}{28}% 
+\contentsline {subsection}{\numberline {8.2}Convergence of Ethical Principles}{28}% 
+\contentsline {subsection}{\numberline {8.3}Causes of Bias}{28}% 
+\contentsline {subsection}{\numberline {8.4}Defining Fairness}{28}% 
+\contentsline {subsubsection}{\numberline {8.4.1}Disparate Treatment }{28}% 
+\contentsline {subsubsection}{\numberline {8.4.2}Disparate Impact}{29}% 
+\contentsline {subsection}{\numberline {8.5}Measuring Fairness }{29}% 
+\contentsline {subsubsection}{\numberline {8.5.1}Demographic Parity }{29}% 
+\contentsline {subsubsection}{\numberline {8.5.2}Equalized Odds }{29}% 
+\contentsline {subsubsection}{\numberline {8.5.3}Individual Fairness }{29}% 
+\contentsline {subsection}{\numberline {8.6}Increasing Fairness}{29}% 

@@ -8,8 +8,6 @@
 \newcommand{\Lagr}{\mathcal{L}}
 \newcommand{\R}{\mathbb{R}}
 \linespread{1.05}
-\usepackage{commath}
-\usepackage[sc,osf]{mathpazo}
 
 
 \begin{document}
@@ -28,6 +26,7 @@
 \bigskip
 
 \section{Introduction to Partial Differential Equations}
+\hrule \vspace{15pt}
 
 \subsection{Definition of Partial Differential Equations}
 A PDE is an equation that relates an unknown function $u$ and some of its partial derivatives, where the function is defined over a $n$-dimensional spatial domain $\Omega \subset R_n$ and time interval $I \subset R$. In general, a PDE can be expressed as
@@ -61,6 +60,7 @@ for some coefficients $a_{ij}$, $b_i$ and $c$. Let $A \in \R ^{nxn}$ be a symmet
 
 
 \section{Fourier Series - Formulation}
+\hrule \vspace{15pt}
 
 \subsection{Periodic, Even, and Odd Functions}
 As periodic functions play an important role in the construction of Fourier series, we first provide a few definitions related to the periodicity of functions.
@@ -135,6 +135,7 @@ $$ \frac{1}{a} \int _{-a}^{a} \sin (n\pi x)\cos (n\pi x)dx =0 $$
 
 
 \section{Fourier Series - Analysis}
+\hrule \vspace{15pt}
 
 \subsection{Convergence of Fourier Series}
 There are two important questions to ask when analysing Fourier series: \textit{do they converge} and if yes, \textit{in what sense do they converge}. There are two key theorems:
@@ -172,6 +173,8 @@ for some $k \in N>0$. Then $f$ has a continuous derivatives $f',  \cdots f(k)$, 
 
 
 \section{Sturm-Liouville Theory}
+\hrule \vspace{15pt}
+
 We use the Sturm-Liouville Theory to draw a connection between Fourier series and eigenproblems we encounter. The regular Sturm-Liouville problem is given
 by
  \begin{align*}
@@ -195,6 +198,7 @@ $$ \phi_n(x) = A_n \cos ( \sqrt{\lambda_n} x) + B_n \sin ( \sqrt{\lambda_n} x)$$
 
 
 \section{Heat Equation - Introduction}
+\hrule \vspace{15pt}
 
 \subsection{Derivation of the Heat Equation}
 The heat equation is derived on the basis of three principles:
@@ -241,6 +245,8 @@ $$ \min_{(x,t) \in \overline{\Omega \times I}} u(x, t) = \min_{(x,t) \in \Gamma}
 
 
 \section{Heat Equation - Separation of Variables}
+\hrule \vspace{15pt}
+
 \subsection{Homogeneous Solution Method}
 To obtain a solution to the heat equation given an initial-boundary value problem, we use \textit{separation of variables }and the \textit{principle of superposition}. The general solution method is as follows: 
 \begin{enumerate}
@@ -292,6 +298,7 @@ Given a nonhomogeneous boundary condition, we  introduce a function $u^b$ that s
 \pagebreak
 
 \section{Heat Equation - Fundamental Solution}
+\hrule \vspace{15pt}
 
 \subsection{Fundamental Solution in $\R \times \R_{>0}$}
 The fundamental solution of the heat equation in $\R \times \R_{>0}$ is given by
@@ -314,6 +321,7 @@ Considering the heat equation on the positive half of the real line, $\R_{>0} \t
 \pagebreak
 
 \section{Heat Equation - Finite Difference Method}
+\hrule \vspace{15pt}
 
 \subsection{Discretization in Space and Time}
 To approximate the solution to the heat equation, we first discretize our space-time domain $(x_L, x_R) \times (0, t_f )$. To this end, we introduce the spatial computation grid comprises $n + 1$ points:
@@ -364,6 +372,8 @@ Using the Crank-Nicolson method we can arrive at the fully discrete solution. Th
 \pagebreak
 
 \section{Laplace's Equation - Introduction}
+\hrule \vspace{15pt}
+
 We look at two second order linear equations:  Laplace's equation given by $-\Delta u = 0$ in $\Omega \subset \R^n$ and Poisson's equation given by $-\Delta u = f$ in $\Omega \subset \R^n$. Laplace's equations is homogeneous while Laplace's equation is nonhomogeneous. Both equations are elliptic. \\ \\ 
 Let $\Omega \subset R_n$.  A function $u$: $\Omega \rightarrow \R$ that satisfies Laplace’s equation $-\Delta u = 0$ in $\Omega$ is called a \textbf{harmonic function}.
 
@@ -401,6 +411,8 @@ u_i &=g_i \quad \text{ on } \partial \Omega
 \pagebreak
 
 \section{Laplace's Equation - Separation of Variables }
+\hrule \vspace{15pt}
+
 We use separation of variables again to solve Laplace's equation. In the class example, we look for the solution on a rectangle, where it should be of the form
 $$ u_n(x,y) = X_n (x; C_n, D_n)Y_n(y), \quad n=1,2,3, \cdots $$
 We then appeal to the superposition principle again and we obtain the form 
@@ -410,6 +422,7 @@ The class notes had some complicated examples, so look there if needed.
 \pagebreak
 
 \section{Laplace's Equation - Fundamental Solution and Green's Functions}
+\hrule \vspace{15pt}
 
 \subsection{Fundamental Solution}
 The fundamental solution to Laplace’s equation is the function $\Phi$ : $\R^n \rightarrow \R$ such that
@@ -456,6 +469,8 @@ To see specific examples of Green's Function on a plane or disk, see the class n
 \pagebreak
 
 \section{Laplace's Equation - Finite Difference Method}
+\hrule \vspace{15pt}
+
 We approximate the two-dimensional Poisson’s equation by a finite difference method. As we have done for the heat equation, we first introduce a computational grid over the domain $\Omega$. The grid points are given by
 $$ (x_i, y_i) = (i\Delta x, j \Delta y), \quad i,j = 0,1, \cdots n+1$$
 where $\Delta x = \Delta y = h = \frac{1}{n + 1}$ is the spacing between any two grid points. The approximation of the solution is then
@@ -476,6 +491,8 @@ $$ \|u-\tilde{u} \|_{\infty} = \max_{i,j=0,1, \cdots n} | u(x_i, y_i) - \tilde{u
 \pagebreak
 
 \section{Wave Equation - Introduction }
+\hrule \vspace{15pt}
+
 We're now looking at the wave equation, which is a hyperbolic equation. The wave equation is expressed as follows:
 $$ \frac{\partial^2 u}{\partial t^2} = c^2 \frac{\partial^2 u}{\partial x^2} $$
 where $c$ is the wave speed. 
@@ -504,6 +521,8 @@ $$ E(t) = E(t=0) \quad \forall \; t \in \R_{>0} $$
 \pagebreak
 
 \section{Wave Equation - Separation of Variables }
+\hrule \vspace{15pt}
+
 \subsection{Homogeneous Dirichlet Boundary Conditions}
 To obtain a solution to the wave equation given an initial-boundary value problem, we use the same approaches we used with the heat equation. The general solution method for homogeneous dirichlet boundary conditions is as follows: 
 \begin{enumerate}
@@ -573,6 +592,8 @@ $$ u(x,t) =\frac{1}{2} \left[ g^{e,p} (x-t) + g^{e,p} (x+t) \right] + \frac{1}{2
 \pagebreak
 
 \section{Transport Equation - Method of Characteristics}
+\hrule \vspace{15pt}
+
 The transport equation is a second order hyperbolic equation, given as: 
 $$ \frac{\partial u}{\partial t} + b\cdot \nabla u = 0$$
 \subsection{Generalized Transport Equation}

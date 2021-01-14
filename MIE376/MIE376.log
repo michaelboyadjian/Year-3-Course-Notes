@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  14 JAN 2021 09:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  14 JAN 2021 09:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**APS360.tex
-(./APS360.tex
+**MIE376.tex
+(./MIE376.tex
 LaTeX2e <2018-12-01>
 (/usr/local/texlive/2019/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2018/09/03 v1.4i Standard LaTeX document class
@@ -218,38 +218,87 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfig@top=\skip55
 \subfig@bottom=\skip56
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+\c@tracingmulticols=\count117
+\mult@box=\box33
+\multicol@leftmargin=\dimen129
+\c@unbalance=\count118
+\c@collectmore=\count119
+\doublecol@number=\count120
+\multicoltolerance=\count121
+\multicolpretolerance=\count122
+\full@width=\dimen130
+\page@free=\dimen131
+\premulticols=\dimen132
+\postmulticols=\dimen133
+\multicolsep=\skip57
+\multicolbaselineskip=\skip58
+\partial@page=\box34
+\last@line=\box35
+\maxbalancingoverflow=\dimen134
+\mult@rightbox=\box36
+\mult@grightbox=\box37
+\mult@gfirstbox=\box38
+\mult@firstbox=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\c@columnbadness=\count123
+\c@finalcolumnbadness=\count124
+\last@try=\dimen135
+\multicolovershoot=\dimen136
+\multicolundershoot=\dimen137
+\mult@nat@firstbox=\box57
+\colbreak@box=\box58
+\mc@col@check@num=\count125
+)
 (/usr/local/texlive/2019/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-(./APS360.aux)
-\openout1 = `APS360.aux'.
+(./MIE376.aux)
+\openout1 = `MIE376.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
-LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen129
-\scratchbox=\box33
-\nofMPsegments=\count118
-\nofMParguments=\count119
+\scratchcounter=\count126
+\scratchdimen=\dimen138
+\scratchbox=\box59
+\nofMPsegments=\count127
+\nofMParguments=\count128
 \everyMPshowfont=\toks23
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen130
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
+\MPscratchCnt=\count129
+\MPscratchDim=\dimen139
+\MPnumerator=\count130
+\makeMPintoPDFobject=\count131
 \everyMPtoPDFconversion=\toks24
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -302,166 +351,38 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count123
-LaTeX Font Info:    Try loading font information for U+esint on input line 26.
+\c@lstlisting=\count132
+LaTeX Font Info:    Try loading font information for U+esint on input line 28.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/esint/uesint.fd
 File: uesint.fd 
 ) [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./APS3
-60.toc
-[2])
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./MIE3
+76.toc)
 \tf@toc=\write3
-\openout3 = `APS360.toc'.
+\openout3 = `MIE376.toc'.
 
- [3]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 42.
- (/usr/local/texlive/2019/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
- [4]
-[5]
-<images/synapse.png, id=26, 718.685pt x 346.29375pt>
-File: images/synapse.png Graphic file (type png)
-<use images/synapse.png>
-Package pdftex.def Info: images/synapse.png  used on input line 133.
-(pdftex.def)             Requested size: 395.27797pt x 190.46214pt.
- [6]
-<images/artneuron.png, id=31, 698.61pt x 355.3275pt>
-File: images/artneuron.png Graphic file (type png)
-<use images/artneuron.png>
-Package pdftex.def Info: images/artneuron.png  used on input line 146.
-(pdftex.def)             Requested size: 405.19408pt x 206.09007pt.
- [7 <./images/synapse.png> <./images/artneuron.png>]
-File: images/artneuron.png Graphic file (type png)
-<use images/artneuron.png>
-Package pdftex.def Info: images/artneuron.png  used on input line 161.
-(pdftex.def)             Requested size: 279.43904pt x 142.12846pt.
- [8]
-<images/sigmoid.png, id=44, 633.36626pt x 414.54875pt>
-File: images/sigmoid.png Graphic file (type png)
-<use images/sigmoid.png>
-Package pdftex.def Info: images/sigmoid.png  used on input line 177.
-(pdftex.def)             Requested size: 221.6815pt x 145.09422pt.
-<images/ann.png, id=45, 657.45625pt x 318.18875pt>
-File: images/ann.png Graphic file (type png)
-<use images/ann.png>
-Package pdftex.def Info: images/ann.png  used on input line 198.
-(pdftex.def)             Requested size: 328.72733pt x 159.09398pt.
- [9 <./images/sigmoid.png>] [10 <./images/ann.png>] [11]
-<images/conf.png, id=58, 688.5725pt x 353.32pt>
-File: images/conf.png Graphic file (type png)
-<use images/conf.png>
-Package pdftex.def Info: images/conf.png  used on input line 286.
-(pdftex.def)             Requested size: 344.2854pt x 176.65956pt.
- [12 <./images/conf.png>] [13]
-<images/I.png, id=67, 244.915pt x 217.81375pt>
-File: images/I.png Graphic file (type png)
-<use images/I.png>
-Package pdftex.def Info: images/I.png  used on input line 339.
-(pdftex.def)             Requested size: 85.35826pt x 75.91023pt.
-<images/K.png, id=68, 202.7575pt x 163.61125pt>
-File: images/K.png Graphic file (type png)
-<use images/K.png>
-Package pdftex.def Info: images/K.png  used on input line 341.
-(pdftex.def)             Requested size: 85.35826pt x 68.87852pt.
- [14 <./images/I.png> <./images/K.png>]
-<images/cnn.png, id=74, 713.66624pt x 278.03876pt>
-File: images/cnn.png Graphic file (type png)
-<use images/cnn.png>
-Package pdftex.def Info: images/cnn.png  used on input line 357.
-(pdftex.def)             Requested size: 428.20305pt x 166.82454pt.
- [15 <./images/cnn.png>] [16] [17]
-<images/auto.png, id=85, 400.49625pt x 103.38625pt>
-File: images/auto.png Graphic file (type png)
-<use images/auto.png>
-Package pdftex.def Info: images/auto.png  used on input line 497.
-(pdftex.def)             Requested size: 480.5931pt x 124.06287pt.
 
-Overfull \hbox (10.83807pt too wide) in paragraph at lines 497--498
- [] 
- []
-
-[18 <./images/auto.png>]
-<images/cosine.png, id=90, 488.82625pt x 279.0425pt>
-File: images/cosine.png Graphic file (type png)
-<use images/cosine.png>
-Package pdftex.def Info: images/cosine.png  used on input line 526.
-(pdftex.def)             Requested size: 342.17603pt x 195.3284pt.
- [19 <./images/cosine.png>]
-<images/rnn.png, id=96, 691.58376pt x 229.85875pt>
-File: images/rnn.png Graphic file (type png)
-<use images/rnn.png>
-Package pdftex.def Info: images/rnn.png  used on input line 545.
-(pdftex.def)             Requested size: 345.79103pt x 114.92908pt.
-<images/compare.png, id=97, 681.54625pt x 255.95625pt>
-File: images/compare.png Graphic file (type png)
-<use images/compare.png>
-Package pdftex.def Info: images/compare.png  used on input line 560.
-(pdftex.def)             Requested size: 272.61366pt x 102.38068pt.
-<images/lstm.png, id=98, 501.875pt x 279.0425pt>
-File: images/lstm.png Graphic file (type png)
-<use images/lstm.png>
-Package pdftex.def Info: images/lstm.png  used on input line 563.
-(pdftex.def)             Requested size: 351.31009pt x 195.3284pt.
- [20 <./images/rnn.png> <./images/compare.png>]
-<images/gru.png, id=104, 696.6025pt x 216.81pt>
-File: images/gru.png Graphic file (type png)
-<use images/gru.png>
-Package pdftex.def Info: images/gru.png  used on input line 575.
-(pdftex.def)             Requested size: 348.3004pt x 108.40472pt.
- [21 <./images/lstm.png> <./images/gru.png>]
-<images/gen.png, id=110, 448.67625pt x 214.8025pt>
-File: images/gen.png Graphic file (type png)
-<use images/gen.png>
-Package pdftex.def Info: images/gen.png  used on input line 607.
-(pdftex.def)             Requested size: 269.20782pt x 128.88249pt.
- [22 <./images/gen.png>]
-<images/gan.png, id=115, 583.17876pt x 210.7875pt>
-File: images/gan.png Graphic file (type png)
-<use images/gan.png>
-Package pdftex.def Info: images/gan.png  used on input line 646.
-(pdftex.def)             Requested size: 524.85603pt x 189.707pt.
-
-Overfull \hbox (55.10101pt too wide) in paragraph at lines 646--647
- [] 
- []
-
-[23 <./images/gan.png>] [24]
-<images/rl.png, id=123, 425.59pt x 136.51pt>
-File: images/rl.png Graphic file (type png)
-<use images/rl.png>
-Package pdftex.def Info: images/rl.png  used on input line 694.
-(pdftex.def)             Requested size: 383.02745pt x 122.85785pt.
- [25 <./images/rl.png>] [26] [27] [28] [29]
-(./APS360.aux) ) 
+[2] [3] (./MIE376.aux) ) 
 Here is how much of TeX's memory you used:
- 4924 strings out of 492616
- 69821 string characters out of 6129482
- 149872 words of memory out of 5000000
- 8750 multiletter control sequences out of 15000+600000
- 10323 words of font info for 40 fonts, out of 8000000 for 9000
+ 4926 strings out of 492616
+ 69634 string characters out of 6129482
+ 147549 words of memory out of 5000000
+ 8772 multiletter control sequences out of 15000+600000
+ 8763 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,35p,300b,315s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmex10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on APS360.pdf (29 pages, 2841425 bytes).
+ 41i,6n,35p,273b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2019/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr17.pfb>
+Output written on MIE376.pdf (3 pages, 54876 bytes).
 PDF statistics:
- 181 PDF objects out of 1000 (max. 8388607)
- 102 compressed objects within 2 object streams
+ 34 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 86 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -5,8 +5,13 @@
 \usepackage{cancel}
 \usepackage{graphicx}
 \linespread{1.1}
-\usepackage{commath}
-\usepackage[sc,osf]{mathpazo}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\definecolor{darkblue}{RGB}{10,0,100}
+\definecolor{otherblue}{RGB}{0,70,200}
+\sectionfont{\color{darkblue}} 
+\subsectionfont{\color{otherblue}}  
+
 \newcommand{\Lagr}{\mathcal{L}}
 
 
@@ -26,6 +31,7 @@
 \bigskip
 
 \section{Theory of Interest}
+\hrule \vspace{15pt}
 
 \subsection{Principle and Interest}
 \begin{itemize}
@@ -42,7 +48,7 @@
 \item Not often used in practice
 $$ V = A(1+rn)$$
 \begin{center}
-\includegraphics[scale=0.4]{simple.png} 
+\includegraphics[scale=0.4]{images/simple.png} 
 \end{center}
 \end{itemize}
 
@@ -52,12 +58,12 @@ $$ V = A(1+rn)$$
 \item At time $n$ the value is $A(1+r)^n$; money grows geometrically
 $$ V = A(1+r)^n$$
 \begin{center}
-\includegraphics[scale=0.4]{compound.png} 
+\includegraphics[scale=0.4]{images/compound.png} 
 \end{center}
 \item \textbf{Rule of 72:} Money invested at $r \%$ a year doubles in approximately $72/r$ years
 \item \textbf{Nominal Interest:} At $r\%$ compounded $m$ periods per year for $k$ periods would cause money to grow by the factor $(1+ \frac{r}{m})^k$
 \begin{center}
-\includegraphics[scale=0.3]{nominal.png} 
+\includegraphics[scale=0.3]{images/nominal.png} 
 \end{center}
 \item \textbf{Continuous Compounding:} Take the limit of $m$ periods as $m$ approached infinity:
 $$V =  \lim_{m \rightarrow \infty} \left(1 +\frac{r}{m} \right)^m = e^{rt}$$
@@ -90,11 +96,11 @@ $$ r_{eff} = \left( 1 + \frac{r_{nom}}{m} \right) ^ m -1 $$
 \begin{itemize}
 \item \textbf{Compounding -} Every time a cash flow is moved \textit{forward} one period, it is \textit{multiplied} by $(1+r)$
 \begin{center}
-\includegraphics[scale=0.3]{compounding.png} 
+\includegraphics[scale=0.3]{images/compounding.png} 
 \end{center}
 \item \textbf{Discounting -} Every time a cash flow is moved \textit{backward} one period, it is \textit{divided} by $(1+r)$
 \begin{center}
-\includegraphics[scale=0.3]{discounting.png} 
+\includegraphics[scale=0.3]{images/discounting.png} 
 \end{center}
 \end{itemize}
 \end{itemize}
@@ -118,6 +124,8 @@ $$ x_0 + \frac{x_1}{(1+r)} + \frac{x_3}{(1+r)^2} + \cdots + \frac{x_n}{(1+r)^n} 
 \pagebreak
 
 \section{Fixed Income Securities}
+\hrule \vspace{15pt}
+
 \subsection{Terminology}
 \begin{itemize}
 \item \textbf{Financial Instrument:} A legal obligation or claim having a monetary structure \textit{(e.g. stocks, bonds, mortgages, futures, insurance, etc.)}
@@ -147,13 +155,13 @@ An agreement to pay money according to the rules of the issue
 \subsubsection{Price and Yield}
 The internal rate of return of a bond cash flow stream is referred to as the yield ($\lambda$). The yield captures the “rate of return” that one would obtain by purchasing the bond and holding it to maturity. 
 \begin{center}
-\includegraphics[scale=0.6]{yield.png} 
+\includegraphics[scale=0.6]{images/yield.png} 
 \end{center}
 We use the following formula to relate the price and yield with $n$ remaining coupon payments:
 $$ P = \frac{F}{\left(1+\frac{\lambda}{m}\right)^n} + \frac{C/m}{\lambda / m } \left(1 - \frac{1}{\left(1+\frac{\lambda}{m}\right)^n}\right) $$
 The longer the time to maturity, the more sensitive the price of the bond is to the yield.  We can see this in the Price-Yield curve:
 \begin{center}
-\includegraphics[scale=0.7]{py.png} 
+\includegraphics[scale=0.7]{images/py.png} 
 \end{center}
 \subsubsection{Duration}
 The maturity time of a bond is related to the sensitivity of the bond price to the yield. With coupons, the maturity time does not exactly correspond to the sensitivity.  \\ \\ We define the \textbf{Macaulay Duration}, which is a weighted average of times to cash flows: \\ \smallskip
@@ -174,11 +182,12 @@ $$ D = D_1w_1 +D_2 w_2+ \cdots + D_mw_m$$
 \pagebreak
 
 \section{Term Structure of Interest Rates}
+\hrule \vspace{15pt}
 
 \subsection{Yield Curve}
 In general, yields on bonds of different maturities are different.  If we plot $yield$ vs $time$ to maturity for bonds, we call the resulting curve the yield curve. The yield curve is not exactly what we want since there may be coupons, etc. We would really like to know the interest rate on a cash flow at time $t$, with no intermediate cash flows.
 \begin{center}
-\includegraphics[scale=0.6]{yieldcurve.png} 
+\includegraphics[scale=0.6]{images/yieldcurve.png} 
 \end{center}
 \subsection{Spot Rates}
 Interest rates for a specific time period are called spot rates. They can be quted as being compounded (i) yearly, (ii) $m$ periods / year, or (iii) continuously.  When computing $PV$ the spot rate corresponding to the time of the cash flow must be used. If we know the price of a zero coupon bond, it's yield will be the spot rate:
@@ -192,12 +201,12 @@ xF_1 + yF_2 &= F_0
 We solve the system of equations to determine $x$  and $y$ and from there we can find the price and spot rate.
 \subsection{Forward Rates}
 Interest rates for money to be borrowed between two dates in the future, but under terms agreed upon today. $f_{t_1, t_2}$ represents the forward rate between $t_1$ and $t_2$ 
-$$ (1+ s_i)^i (1 +f_{i,j})^{j-1} = (1+s_j)^j$$
+$$ (1+ s_i)^i (1 +f_{i,j})^{j-i} = (1+s_j)^j$$
 When we consider rates that only span one period, we refer to those as spot rates 
 \subsection{Expectation Dynamics}
 We don't know what actual future rates will be when the future time arrives. Using forward rates to predict is called expectation dynamics.  According to the \textbf{Invariance Theorem}, if interest rates evolve according to expectation dynamics then money invested invested for $n$ years will grow by $(1+s_n)^n$ regardless of strategy.
 \begin{center}
-\includegraphics[scale=0.6]{invariance.png} 
+\includegraphics[scale=0.6]{images/invariance.png} 
 \end{center}
 \subsection{Immunization}
 We construct a portfolio of bonds which is protected against changes in interest rates.  The portfolio is constructed with present value $P$ and duration $D$ equal to those of your obligation. 
@@ -210,6 +219,7 @@ $$ P(\lambda) = P(\lambda_0) + P'(\lambda_0) (\lambda - \lambda_0) + \frac{1}{2}
 \pagebreak
 
 \section{Applied Interest Rate Analysis}
+\hrule \vspace{15pt}
 
 \subsection{Dynamic Programming}
 Running present value is a recursive method for calculating present value.  This satisfies the recursive formula: \\  $$ PV(k) = x_k + \frac{PV(k+1)}{1+f_{k,k+1}}$$ \\
@@ -230,6 +240,8 @@ Dynamic decisions are problems where cash flows depend on decisions that will be
 \pagebreak
 
 \section{Mean-Variance Portfolio Theory}
+\hrule \vspace{15pt}
+
 \subsection{Probability}
 Review of some important probability concepts that are used in portfolio theory
 \begin{itemize}
@@ -284,13 +296,13 @@ Short selling corresponds to borrowing an asset and selling it with the understa
 
 \subsection{Portfolio Diagrams}
 \begin{center}
-\includegraphics[scale=0.6]{port.png} 
+\includegraphics[scale=0.6]{images/port.png} 
 \end{center}
 
 \subsection{Minimum-Variance Set}
 For a given mean return, you would like to minimize your risk or variance
 \begin{center}
-\includegraphics[scale=0.6]{minvar.png} 
+\includegraphics[scale=0.6]{images/minvar.png} 
 \end{center}
 If you're risk averse. then:
 \begin{itemize}
@@ -344,7 +356,7 @@ variance &= (1-\alpha)^2 \sigma^2 \\
 standard \; deviation & = (1-\alpha) \sigma
 \end{align*}
 \begin{center}
-\includegraphics[scale=0.4]{riskfree.png} 
+\includegraphics[scale=0.4]{images/riskfree.png} 
 \end{center}
 
 \subsubsection{One-Fund Theorem}
@@ -360,6 +372,8 @@ Getting the weights of the one fund theorem is just the following optimization p
 
 \pagebreak
 \section{Capital Asset Pricing Model (CAPM)}
+\hrule \vspace{15pt}
+
 \subsection{Market Equilibrium}
 A \textbf{market portfolio} is defined to be a portfolio of every stock in the market in proportion to the that stock's representation on the entire market.  Each assets weight in the market portfolio is 
 $$ w_i = \frac{\$ \text{ value of asset } i}{\$ \text{ value of market}}$$
@@ -377,14 +391,14 @@ The theorem states that if the market portfolio $M$ is efficient, the expected r
 $$ r_i - r_f = \beta_i (\bar{r}_m - r_f) \quad \quad \quad \beta_i = \frac{\sigma_{iM}}{\sigma^2_M}$$  
 \\ 
 \begin{center}
-\includegraphics[scale=0.6]{capm.png} 
+\includegraphics[scale=0.6]{images/capm.png} 
 \end{center}
 
 \subsection{Security Market Line}
 \begin{itemize}
 \item All CAPM securities lie along this line 
 \begin{center}
-\includegraphics[scale=0.4]{sml.png} 
+\includegraphics[scale=0.4]{images/sml.png} 
 \end{center}
 \item The correlation with market $\beta$ determines the expected return
 \begin{itemize}
@@ -404,7 +418,7 @@ This risk is broken up into two components:
 \item $ var(\epsilon_i) \rightarrow $ non-systematic,  idiosyncratic, specific risk uncorrelated with market reduced by diversification
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.4]{rkrw.png} 
+\includegraphics[scale=0.4]{images/rkrw.png} 
 \end{center}
 
 \subsection{Implications}
@@ -426,6 +440,7 @@ Given a portfolio, $r_p = w_1r_1 + w_2r_2 + \cdots + w_nr_n$, the $\beta$ of the
 \pagebreak
 
 \section{Options}
+\hrule \vspace{15pt}
 
 \subsection{Financial Derivatives}
 A financial derivative is a financial instrument whose value depends on the values of other more basic underlying financial instruments or variables \textit{(i.e. options)}
@@ -437,12 +452,12 @@ A call option is a derivative that gives the owner the right but not obligation 
 \end{itemize}
 In general, option payoffs are determined by the price of the underlying asset at maturity
 \begin{center}
-\includegraphics[scale=0.4]{call.png} 
+\includegraphics[scale=0.4]{images/call.png} 
 \end{center}
 \subsection{Put Options }
 A put option gives the owner the right but not the obligation to sell a certain date (maturity) for a certain price (strike price). The seller of the put option must buy the underlying asset at the strike price if the owner decides to sell the asset. 
 \begin{center}
-\includegraphics[scale=0.4]{put.png} 
+\includegraphics[scale=0.4]{images/put.png} 
 \end{center}
 
 \subsection{Exchange Traded vs Over-the-Counter}

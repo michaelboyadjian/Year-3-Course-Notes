@@ -12,7 +12,12 @@
 \usepackage{color}
 \usepackage{listings}
 \usepackage{subfigure}
-
+\usepackage{xcolor}
+\usepackage{sectsty}
+\definecolor{darkblue}{RGB}{10,0,100}
+\definecolor{otherblue}{RGB}{0,70,200}
+\sectionfont{\color{darkblue}} 
+\subsectionfont{\color{otherblue}}  
 
 \begin{document}
 
@@ -30,6 +35,7 @@
 \bigskip
 
 \section{Introduction to Machine Learning}
+ \hrule \vspace{15pt}
 
 \subsection{Terminology}
 \begin{itemize}
@@ -99,6 +105,7 @@
 
 
 \section{Artificial Neural Networks (ANNs)}
+\hrule \vspace{15pt}
 
 \subsection{Biological Neurons}
 \subsubsection{Artificial Pigeon}
@@ -123,7 +130,7 @@ In order to use an artificial neural network (pigeon) to solve a simple classifi
 \end{itemize}
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.55]{synapse.png}
+\includegraphics[scale=0.55]{images/synapse.png}
 \end{center}
 
 
@@ -136,7 +143,7 @@ $$ v_k = \sum_{i=0}^p w_i x_i = w^Tx$$
 \item $x_0$ is reserved for the bias
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.58]{artneuron.png}
+\includegraphics[scale=0.58]{images/artneuron.png}
 \end{center}
 \subsection{Forward Pass}
 \subsubsection{Error}
@@ -151,7 +158,7 @@ where $N$ is the number of training samples, $K$ is the number of classes, $y$ i
 \item Change one weight at a time in the direction that reduces error
 \item Gradient descent - Adjusting weights according to the slope (gradient) will guide us to the minimum error
 \begin{center}
-\includegraphics[scale=0.4]{artneuron.png}
+\includegraphics[scale=0.4]{images/artneuron.png}
 \end{center}
 \end{itemize}
 
@@ -167,7 +174,7 @@ where $\eta$ is the learning rate,  the step size taken according to the gradien
 \item Step function gradient undefined at $f(0$), and $0$ everywhere else,  require another activation function - we can use sigmoid (logistic) activation function 
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.35]{sigmoid.png}
+\includegraphics[scale=0.35]{images/sigmoid.png}
 \end{center}
 \begin{itemize}
 \item Other activation functions include $\tanh$ activation and $ReLU$ activation
@@ -188,7 +195,7 @@ $$ ReLU = \max \{ 0,  x \} $$
 \item Input layer is not counted in number of layers 
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.5]{ann.png}
+\includegraphics[scale=0.5]{images/ann.png}
 \end{center}
 \begin{itemize}
 \item Adding more linear layers does not help increase the capacity of the model
@@ -276,7 +283,7 @@ very much in each iteration; takes a long time to train the network
 \item Create a confusion matrix to provides visualization of the classification performance over each class (ground truth label)
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.5]{conf.png}
+\includegraphics[scale=0.5]{images/conf.png}
 \end{center}
 
 
@@ -301,6 +308,7 @@ $$ \sigma (z) _j = \frac{e^z_j}{\sum_{k=1}^K e^z_k} \quad \quad \text{for       
 
 
 \section{Convolutional Neural Networks (CNNs)}
+\hrule \vspace{15pt}
 
 \subsection{Large Networks}
 \begin{itemize}
@@ -328,9 +336,9 @@ $$ \sigma (z) _j = \frac{e^z_j}{\sum_{k=1}^K e^z_k} \quad \quad \text{for       
 \begin{figure}[H]
 \begin{center}
 \subfigure
-{\includegraphics[width=3cm]{I.png}}
+{\includegraphics[width=3cm]{images/I.png}}
 \subfigure
-{\includegraphics[width=3cm]{K.png}}
+{\includegraphics[width=3cm]{images/K.png}}
 \end{center}
 \end{figure}
 
@@ -346,7 +354,7 @@ $$ n_{i+1} = \frac{n_i + 2p-f}{s} + 1 $$
 \end{itemize}
 
 \begin{center}
-\includegraphics[scale=0.6]{cnn.png}
+\includegraphics[scale=0.6]{images/cnn.png}
 \end{center}
 
 \subsection{Pooling Layers}
@@ -419,6 +427,7 @@ $$ n_{i+1} = \frac{n_i + 2p-f}{s} + 1 $$
 
 
 \section{Autoencoders}
+\hrule \vspace{15pt}
 
 \subsection{Unsupervised Learning}
 \begin{itemize}
@@ -485,13 +494,14 @@ input to a single arbitrary number
 \end{itemize}
 
 \begin{center}
-\includegraphics[scale=1.2]{auto.png}
+\includegraphics[scale=1.2]{images/auto.png}
 \end{center}
 
 
 \pagebreak
 
 \section{Recurrent Neural Networks (RNNs)}
+\hrule \vspace{15pt}
 
 \subsection{One-Hot Encoding}
 \begin{itemize}
@@ -513,7 +523,7 @@ $$\sqrt{\sum_i (x_i - y_i)^2}$$
 \subsubsection{Cosine Similarity}
 The cosine similarity of two vectors $x$ and $y$ is the cosine of the angle between the two vectors.  Cosine similarity is useful when we want a distance measure that is invariant to the magnitude of the vectors.
 \begin{center}
-\includegraphics[scale=0.7]{cosine.png}
+\includegraphics[scale=0.7]{images/cosine.png}
 \end{center}
 
 \subsection{RNN Architecture}
@@ -532,7 +542,7 @@ The cosine similarity of two vectors $x$ and $y$ is the cosine of the angle betw
 \end{itemize}
 
 \begin{center}
-\includegraphics[scale=0.5]{rnn.png}
+\includegraphics[scale=0.5]{images/rnn.png}
 \end{center}
 
 \subsection{Long Term Dependencies}
@@ -547,10 +557,10 @@ The cosine similarity of two vectors $x$ and $y$ is the cosine of the angle betw
 \end{itemize}
 
 \begin{center}
-\includegraphics[scale=0.4]{compare.png}
+\includegraphics[scale=0.4]{images/compare.png}
 \end{center}
 \begin{center}
-\includegraphics[scale=0.7]{lstm.png}
+\includegraphics[scale=0.7]{images/lstm.png}
 \end{center}
 \begin{itemize}
 \item \textbf{Gated Recurrent Units (GRUs)}
@@ -562,7 +572,7 @@ merges cell state and hidden state
 \end{itemize}
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.5]{gru.png}
+\includegraphics[scale=0.5]{images/gru.png}
 \end{center}
 
 \subsection{Generative RNNs}
@@ -594,13 +604,14 @@ merges cell state and hidden state
 \end{itemize}
 \end{itemize}
 \begin{center}
-\includegraphics[scale=0.6]{gen.png}
+\includegraphics[scale=0.6]{images/gen.png}
 \end{center}
 
 
 \pagebreak
 
 \section{Generative Adversarial Networks (GANs)}
+\hrule \vspace{15pt}
 
 \subsection{Generative Models}
 \begin{itemize}
@@ -632,7 +643,7 @@ merges cell state and hidden state
 \end{itemize}
 
 \begin{center}
-\includegraphics[scale=0.9]{gan.png}
+\includegraphics[scale=0.9]{images/gan.png}
 \end{center}
 
 \subsection{Loss Function}
@@ -663,6 +674,7 @@ $$ f(x+ \epsilon ) = correct \; class $$
 \pagebreak
 
 \section{Reinforcement Learning}
+\hrule \vspace{15pt}
 
 \subsection{Overview}
 \begin{itemize}
@@ -679,7 +691,7 @@ $$ f(x+ \epsilon ) = correct \; class $$
 \item \textbf{Agent} - chooses an action at each time step, given the state
 \end{itemize} 
 \begin{center}
-\includegraphics[scale=0.9]{rl.png}
+\includegraphics[scale=0.9]{images/rl.png}
 \end{center}\
 \end{itemize}
 
@@ -780,6 +792,8 @@ $$ Q(s,a) =(1-\alpha)\cdot Q(s,a) + \alpha \cdot [R(s,a,s')+ \gamma \cdot V(s')]
 \pagebreak
 
 \section{Ethics and Fairness}
+\hrule \vspace{15pt}
+
 \subsection{What is Ethics?}
 \begin{itemize}
 \item Ethics deals with moral principles that govern a person's behavior or the conducting of an activity

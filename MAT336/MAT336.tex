@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{esint}
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+\linespread{1.2}
+\allowdisplaybreaks
+\usepackage{color}
+\usepackage{listings}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{sectsty}
+\definecolor{darkblue}{RGB}{10,0,100}
+\definecolor{otherblue}{RGB}{0,70,200}
+\sectionfont{\color{darkblue}} 
+\subsectionfont{\color{otherblue}}  
+
+
+\begin{document}
+
+\title{MAT336  \\ Elements of Analysis}
+\author{Michael Boyadjian}
+\maketitle
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+
+\bigskip
+\bigskip
+\bigskip
+
+
+\section{Logic and Proof}
+\hrule \vspace{15pt}
+
+\subsection{Logical Connectives}
+Mathematics consists of declarative sentences. A \textbf{statement} is a sentence that can be classified as either true or false; we don't  need to know if it is true or false, just that it's one or the other. \\
+
+\textbf{ex. }``\textit{Every continuous function is differentiable}'' is a FALSE statement
+ \\ \indent \textbf{ex.} ``\textit{Two plus two equals four'}' is a TRUE statement
+ \\ \\ The words \textit{not}, \textit{and}, \textit{or}, \textit{if $\cdots$then}, and \textit{if and only if} are called \textbf{sentential} connectives. The meanings of these are all summarized below:
+ \begin{itemize}
+ \item \underline{\textbf{not}}: Represents the logical opposite or \textbf{negation} of a statement $p$. This is denoted by $ \sim p$ 
+ \item \underline{\textbf{and}}: Represents the \textbf{conjunction} of two statements $p$ and $q$. This is used in the same way as in English and is denoted by $p \land q$
+ \item \underline{\textbf{or}}: Represents the \textbf{disjunction} of two statements $p$ and $q$. This is used only in the inclusive context where there is the possibility of having both statements and is denoted by $p \lor q$
+\item \underline{\textbf{if $\cdots$ then}}: Represents an \textbf{implication} or \textbf{conditional} statement.  If we say ``if $p$, then $q$", the if-statement $p$ in the implication is called the \textbf{antecedent} and the then-statement $q$ is called the \textbf{consequent}. This is denoted by $p \Rightarrow q$. In words, this can be represented in many forms 
+\begin{multicols}{3}
+\begin{itemize}
+\item if $p$, then $q$
+\item $p$ implies $q$
+\item $p$ only if $q$
+\item $q$ if $p$
+\item $q$ provided that $p$
+\item $q$ whenever $p$
+\item $p$ is a sufficient condition for $q$
+\item $p$ is a necessary condition for $q$
+\end{itemize}
+\end{multicols}
+\item \underline{\textbf{if and only if}}: Represents the conjunction of two conditional statements, $p \Rightarrow q$ and $q \Rightarrow p$. This is considered a \textbf{biconditional} and is denoted by $ p \Leftrightarrow q$ which is equivalent to  $(p \Rightarrow q) \land (q \Rightarrow p)$. If a compound statement is true in all cases, this is called a \textbf{tautology}, which shows that the two parts of the biconditional are logically equivalent. That is, the two component statements have the same truth tables.
+\end{itemize}
+
+\indent \indent \indent \textbf{ex. } $\sim(p\land q) \Leftrightarrow [(\sim p)\lor (\sim q)] $ \\
+\indent \indent \indent \textbf{ex. } $ \sim (p \lor q) \Leftrightarrow [(\sim p) \land ( \sim q)]$ \\
+\indent \indent \indent \textbf{ex. } $ \sim (p \Rightarrow q) \Leftrightarrow [ p \land ( \sim q)]$
+\pagebreak
+
+
+\subsection{Quantifiers}
+Certain sentences need to be considered within a particular context in order to become a statement. When a sentence involves a variable such as $x$, it is customary to use functional notation when referring to it. \\ 
+
+\textbf{ex.} $p(x)$: $x^2 - 5x + 6$
+
+
+\pagebreak
+\section{The Real Numbers}
+\section{Sequences}
+\section{Limits and Continuity}
+
+
+\end{document}

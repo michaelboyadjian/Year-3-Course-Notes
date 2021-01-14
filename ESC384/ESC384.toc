@@ -23,7 +23,7 @@
 \contentsline {subsection}{\numberline {6.2}Nonhomogeneous Source Term}{14}% 
 \contentsline {subsection}{\numberline {6.3}Nonhomogeneous Boundary Conditions}{14}% 
 \contentsline {section}{\numberline {7}Heat Equation - Fundamental Solution}{15}% 
-\contentsline {subsection}{\numberline {7.1}Fundamental Solution in $\PazoBB {R}\times \PazoBB {R}_{>0}$}{15}% 
+\contentsline {subsection}{\numberline {7.1}Fundamental Solution in $\mathbb {R}\times \mathbb {R}_{>0}$}{15}% 
 \contentsline {subsection}{\numberline {7.2}Homogeneous Dirichlet and Neumann Boundary Conditions}{15}% 
 \contentsline {section}{\numberline {8}Heat Equation - Finite Difference Method}{16}% 
 \contentsline {subsection}{\numberline {8.1}Discretization in Space and Time}{16}% 
@@ -38,7 +38,7 @@
 \contentsline {section}{\numberline {10}Laplace's Equation - Separation of Variables }{20}% 
 \contentsline {section}{\numberline {11}Laplace's Equation - Fundamental Solution and Green's Functions}{21}% 
 \contentsline {subsection}{\numberline {11.1}Fundamental Solution}{21}% 
-\contentsline {subsection}{\numberline {11.2}Poisson's Equation in $\PazoBB {R}^2$}{21}% 
+\contentsline {subsection}{\numberline {11.2}Poisson's Equation in $\mathbb {R}^2$}{21}% 
 \contentsline {subsection}{\numberline {11.3}Green's Function}{21}% 
 \contentsline {subsection}{\numberline {11.4}General Formulation of Green's Function}{22}% 
 \contentsline {section}{\numberline {12}Laplace's Equation - Finite Difference Method}{23}% 
