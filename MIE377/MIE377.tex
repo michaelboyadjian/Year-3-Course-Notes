@@ -19,6 +19,7 @@
 \definecolor{otherblue}{RGB}{0,70,200}
 \sectionfont{\color{darkblue}} 
 \subsectionfont{\color{otherblue}}  
+\usepackage{bm}
 
 
 
@@ -41,7 +42,39 @@
 
 \section{Optimization Theory}
 \hrule \vspace{15pt}
-Hello
+\subsection{Linear and Non-Linear Programs}
+Mathematical optimization (or ‘mathematical programming’) consists of maximizing or minimizing an objective function to select the best solution from a set of available alternatives. In general, optimization problems take the following form: 
+\begin{align*}
+\min_x f(\bm{x}) & \quad  \left. \right\rbrace \quad \text{Objective Function } \\
+\text{s.t.  }  g(\bm{x}) \leq 0 & \quad \left. \right\rbrace \quad \text{Inequality Constraints } \\ 
+h(\bm{x}) = 0 & \quad \left. \right\rbrace \quad \text{Equality Constraints }
+\end{align*}
+In finance, the criteria used to formulate an optimization problem is defined by the investor, i.e., investors must determine their objective and their constraints.  The degree of an optimization problem is determined by the \textbf{highest degree} between its objective function and constraints.
+
+\subsection{General Non-Linear Optimization}
+\subsubsection{Characterizing Local Minima}
+Consider a problem where we must minimize some objective function $f(\bm{x})$. A minimum point of $f(x)$ is found where the first order derivative is zero and where the second order derivative is positive. Such a point is denoted as $x^*$ and is also called an \textbf{optimal solution} or \textbf{local minimum}. We define the first and second derivatives as follows: 
+\begin{itemize}
+\item \textbf{First Derivative}: The \textit{gradient}, $\nabla f(\bm x)$,  is the column vector of first-order partial derivatives of the scalar-valued function $f( \bm x)$
+$$\nabla f(\bm x) = \begin{bmatrix}
+\frac{\partial f}{\partial x_1} \\ 
+\frac{\partial f}{\partial x_2} \\ 
+\vdots \\
+\frac{\partial f}{\partial x_n} 
+\end{bmatrix}$$
+\item \textbf{Second Derivative}: The \textit{Hessian matrix}, $H(\bm x)$, is the square matrix of second-order partial derivatives of the scalar-valued function $f(\bm x)$. The Hessian is symmetric.
+$$\ H(\bm x) = \begin{bmatrix}
+\frac{\partial ^2 f}{\partial x^2_1}    &   \frac{\partial ^2 f}{\partial x_1 \partial x_2}  &  \cdots  &   \frac{\partial ^2 f}{\partial x_1 x_n} \\ 
+\frac{\partial f}{\partial x_2} & \frac{\partial ^2 f}{\partial x^2_2}  & \cdots &  \frac{\partial ^2 f}{\partial x_2 x_n}  \\ 
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial f}{\partial x_n} & \frac{\partial ^2 f}{\partial x_n x_2} & \cdots & \frac{\partial ^2 f}{\partial x^2_n}
+\end{bmatrix}$$
+\end{itemize}
+\subsubsection{Conditions for a Local Minimum}
+\begin{enumerate}
+\item \textbf{First-Order Necessary Condition (FONC)}:If $x^*$ is a local minimum, then we must have that $\nabla f( \bm {x^*}) = 0$. Note that both $\nabla f( \bm {x^*} )$ and $\bm 0$ are vectors. In particular,  $\bm 0$ is a vector where all elements are equal to zero.
+\end{enumerate}
+
 \pagebreak
 \section{Mean-Variance Optimization}
 \section{Factor Models}

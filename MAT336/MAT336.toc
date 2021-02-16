@@ -1,6 +1,17 @@
 \contentsline {section}{\numberline {1}Logic and Proof}{3}% 
 \contentsline {subsection}{\numberline {1.1}Logical Connectives}{3}% 
 \contentsline {subsection}{\numberline {1.2}Quantifiers}{4}% 
-\contentsline {section}{\numberline {2}The Real Numbers}{5}% 
-\contentsline {section}{\numberline {3}Sequences}{5}% 
-\contentsline {section}{\numberline {4}Limits and Continuity}{5}% 
+\contentsline {subsection}{\numberline {1.3}Formal Proofs}{4}% 
+\contentsline {subsection}{\numberline {1.4}Indentation and Valid Arguments}{5}% 
+\contentsline {section}{\numberline {2}Sets and Functions}{7}% 
+\contentsline {subsection}{\numberline {2.1}Basic Set Operations}{7}% 
+\contentsline {subsection}{\numberline {2.2}Ordered Pairs}{7}% 
+\contentsline {subsection}{\numberline {2.3}Functions}{7}% 
+\contentsline {subsection}{\numberline {2.4}Cardinality}{7}% 
+\contentsline {section}{\numberline {3}The Real Numbers}{8}% 
+\contentsline {subsection}{\numberline {3.1}Natural Numbers and Inductions}{8}% 
+\contentsline {subsection}{\numberline {3.2}Ordered Fields}{8}% 
+\contentsline {subsection}{\numberline {3.3}The Completeness Axiom}{9}% 
+\contentsline {subsection}{\numberline {3.4}Topology of The Real Numbers}{9}% 
+\contentsline {section}{\numberline {4}Sequences}{10}% 
+\contentsline {section}{\numberline {5}Limits and Continuity}{10}% 

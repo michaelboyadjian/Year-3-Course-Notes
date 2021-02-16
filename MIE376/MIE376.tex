@@ -6,14 +6,17 @@
 \usepackage{cancel}
 \usepackage{graphicx}
 \usepackage{xcolor}
+\usepackage{amssymb}
 \usepackage{float}
 \linespread{1.2}
 \allowdisplaybreaks
+\newcommand{\R}{\mathbb{R}}
 \usepackage{color}
 \usepackage{listings}
 \usepackage{subfigure}
 \usepackage{multicol}
 \usepackage{xcolor}
+\usepackage{bm}
 \usepackage{sectsty}
 \definecolor{darkblue}{RGB}{10,0,100}
 \definecolor{otherblue}{RGB}{0,70,200}
@@ -37,8 +40,176 @@
 \bigskip
 
 
-\section{Linear Optimization}
-\section{Non-Linear Optimization}
-\section{Integer Programming}
+\section{Linear Programming}
+\hrule \vspace{15pt}
+Linear programming is the field of optimization that concerns (1) the maximization or minimization of a linear function (2) subject to constraints that are also linear.
+\subsection{Diet Problem}
+Given a set of foods with associated nutritional information, we want to meet our nutritional requirements while minimizing the cost of the items. We look to find the least cost combination which is a linear problem. We can generalize this to include $n$ food items with $m$ nutritional requirements:
+$$ x_i = \text{ amount of food item } i $$
+$$ c_i = \text{ cost of one serving of food item } i $$
+$$ a_{ij} = \text{ amount of nutrient } i \text{ in one serving of food item } j $$
+$$ b_j = \text{ amount of nutrient } j \text{ required}  $$
+Formulating this mathematically as a system of equations, we have the following: 
+\begin{align*}
+minimize : & \; \; \; c_1x_1 + c_2x_2 + \cdots+ c_nx_n \\ 
+subject \; to : & \; \; \; a_{11} x_1 + a_{12}x_2 + \cdots + a_{1n} x_n \geq b_1 \\
+& \; \; \; a_{21} x_1 + a_{22}x_2 + \cdots + a_{2n} x_n \geq b_2 \\ 
+&  \; \; \; \quad \quad \quad \quad \quad \quad  \cdots \\
+& \; \; \; a_{m1} x_1 + a_{m2}x_2 + \cdots + a_{mn} x_n \geq b_m \\ 
+&  \; \; \; x_1, x_2,  \cdots x_n \geq 0 
+\end{align*}
+\subsection{Embedded Assumptions}
+Within linear programming problems, there are four key assumptions we must consider: 
+\begin{itemize}
+\item \textbf{Proportionality}: The contribution towards the objective function and constraints of decisions are directly proportional to its values
+\item \textbf{Divisibility}: The decision variables can take on any real number
+\item \textbf{Additivity}: The contribution of a decision variable towards the objective or constraints does not depend on other decision variables,  the total contribution is the sum of individual contributions of each decision variable
+\item \textbf{Certainty}: The data used as coefficients for a linear programming model such as the objective coefficients $c$ and constraint coefficients $A$ and $b$ are known with certainty.
+\end{itemize}
+\subsection{General Linear Programming Problems}
+Linear programming problems can take many forms. They can either maximize or minimize the objective functions. Constraints can be of form $a^Tx\leq b$, $a^Tx\geq b$, or $a^Tx= b$. Variables may also be non-positive,  non-negative, or unrestricted. Thus, in general, linear programming problems can be expressed as follows:
+\begin{align*}
+minimize \; / \; maximize : & \; \; \; c^Tx \\ 
+subject \; to : & \; \; \; a_i^Tx \geq b_i  \quad  i \in L \\
+& \; \; \; a_i^Tx \leq b_i  \quad i \in G \\
+& \; \; \; a_i^Tx = b_i  \quad i \in E \\
+& \; \; \; x \geq 0  \quad j \in NN \\
+& \; \; \; x \leq 0  \quad j \in NP 
+\end{align*}
+This could be further expressed in \textbf{standard form} as:
+\begin{align*}
+minimize \; : & \; \; \; c^Tx \\ 
+subject \; to : & \; \; \; Ax = b \\
+& \; \; \; x \geq 0 
+\end{align*}
+\subsection{Setting up Linear Programming Model}
+\subsubsection{Steps for Model Formulation}
+In setting up a linear programming model, there are 5 key steps that should be followed: 
+\begin{enumerate}
+\item Identify decision variables
+\item Form objective function
+\item Form constraints
+\item Ensure all mathematical expressions are linear
+\item Ensure all embedded assumptions are met
+\end{enumerate}
+\subsubsection{Converting to Standard Form}
+Once the model is formulated, there are then 3 steps in order to convert it to standard form:
+\begin{enumerate}
+\item \textbf{Convert Unrestricted Variable}: Set $x = x^+ - x^-$, where $x^+ \geq 0$,  $x^- \geq 0$
+\item  \textbf{Convert Inequality Constraints}: For a constraint $i$,  $a_{i1} x_1 + a_{i2}x_2 + \cdots + a_{in} x_n \leq b_i$, add a slack variable, $s_i \leq 0$, so that $$a_{i1} x_1 + a_{i2}x_2 + \cdots + a_{in} x_n + s_i  =b_i$$
+For a constraint $i$,  $a_{i1} x_1 + a_{i2}x_2 + \cdots + a_{in} x_n \geq b_i$, add a surplus variable, $s_i \geq 0$, so that $$a_{i1} x_1 + a_{i2}x_2 + \cdots + a_{in} x_n - s_i = b_i$$
+\item \textbf{Convert Maximization to Minimization}: $maximize$ $c^Tx = -minimize$ $-c^Tx$
+\end{enumerate}
+\subsection{Terminology}
+\begin{itemize}
+\item \textbf{Constraint Coefficient}:  $ A = m \times n$ matrix
+\item \textbf{Cost Coefficient}: $ c = n \times 1$  vector
+\item \textbf{Right Hand Side Vector}: $ b = m \times 1$  vector
+\item \textbf{Decision Vector}: $ x = n \times 1$  vector
+\item \textbf{Feasible Set}: $ F = \left\lbrace x \in \R^n  | Ax = b, x\geq 0 \right\rbrace $
+\item \textbf{Optimal Solution}: $x ^* $ if vector $x^* \in F $ and $c^T x^* \leq c^Tx$ for all $x \in F$
+\item \textbf{Boundedness}: A linear program is \textbf{bounded} if $L \leq c^T x$ for all $x \in F$ for some constant $L$,  else it is said to be \textbf{unbounded}.
+\end{itemize}
+\subsection{Absolute Value Problems}
+If we consider an optimization problem of the following form
+\begin{align*}
+minimize \; : & \; \; \; c_1 |x_1| + c_2 |x_2| + \cdots + c_n |x_n|  \\ 
+subject \; to : & \; \; \; x_i \; \text{unrestricted} \quad \quad i = 1,2,\cdots n
+\end{align*}
+We can convert this into an equivalent linear program using the following transformations:
+\begin{align*}
+ |x_i| & =x_i^+ + x_i ^ -  \\ 
+ x_i & =x_i^+ - x_i ^ -   
+\end{align*}
+where $x_i^+$, $x_i^- \geq 0$. Since the objective is to minimize and $c_i > 0$, then $x^+_i \times x^-_i = 0$ will hold at optimality.
+\subsection{Network Optimization Problems}
+\subsubsection{Graph / Network Definitions}
+Networks can be used to represent many other problems where there is a notion of flow over an entity that can be represented as a network.  A network (or graph) $G$ consists of a set of nodes $N$ and a set of edges $E$ (i.e. $G = (N, E)$).  
+\begin{itemize}
+\item $G$ is an \textbf{undirected} graph when each edge $e  \in E$ is an unordered pair of distinct nodes $i$ and $j$ in $N$. An edge between nodes $i$ and $j$ can be denoted in this case as $(i, j)$ or $(j, i)$. 
+\item $G$ is a \textbf{directed} graph when each edge $e \in E$ is an ordered pair of distinct nodes $i$ and $j$ in $N$. An edge will be denoted in this case as $(i, j)$ and indicates that the direction of the edge is from node $i$ to node $j$.
+\item A \textbf{path} between nodes $i$ and $j$ of a graph $G$ is a sequence of nodes and edges starting from $i$ and ending with $j$ such that no nodes are repeated. It is important to note that all edges specified in a path must be in $E$.
+\item A graph $G = (N, E)$ is \textbf{connected} if there is a path between every pair of distinct nodes $i$ and $j \in N$.
+\end{itemize}
+\subsubsection{Minimum Cost Flow Problem}
+We want to determine a least cost shipment (flow) of a product (item) through a connected directed network $G = (N, E)$ in order to satisfy demand at various nodes from various supply nodes. There are 3 types of nodes:
+\begin{itemize}
+\item supply node $(b_i > 0)$
+\item demand node $(b_i < 0)$
+\item transshipment nodes $(b_i = 0)$
+\end{itemize}
+For each $(i, j) \in E$, $c_{ij}$ is the cost of shipping one unit of product from node $i$ to node $j$.  Let $x_{ij}$ be the amount of product to be shipped from node $i$ to node $j$.  The minimum cost flow problem is then:
+\begin{align*}
+minimize : & \sum_{(i,j) \in E} c_{ij}x_{ij}  \\ 
+subject \; to : & \sum_{(i,j) \in E} x_{ij} - \sum_{(j,i) \in E} x_{ji} = b_i\quad \text{for all } i \in N \\
+& \; \; l_{ij} \leq x_{ij} \leq u_{ij} \quad  \text{for all } (i,j) \in N
+\end{align*}
+\subsubsection{Maximum Flow Problem}
+The max flow problem is to determine the maximum amount of flow that can be sent from a source node $s$ to a sink node $t$ over a directed network. Let $G = (N, E)$ be a directed graph and $u_{ij}$ be the capacity of edge $(i, j) \in E$. The linear program is thus described as:
+\begin{align*}
+maximize \; : & \; \; \; v \\ 
+subject \; to  \;: & \; \; \; \sum_{(i,j) \in E} x_{ij} - \sum_{(j,i) \in E} x_{ji} =v \quad \text{for } i =s\\
+& \; \; \; \sum_{(i,j) \in E} x_{ij} - \sum_{(j,i) \in E} x_{ji} =0 \quad \text{for all } i \in N  \text{ except} s \text{ and } t \\
+& \; \; \; \sum_{(i,j) \in E} x_{ij} - \sum_{(j,i) \in E} x_{ji} =-v \quad \text{for } i =t\\
+& \; \; \: l_{ij} \leq x_{ij} \leq u_{ij} \quad  \text{for all } (i,j) \in N
+\end{align*}
+The maximum flow problem makes the following assumptions:
+\begin{enumerate}
+\item The edge capacities are non-negative and integral
+\item There is no directed path from $s$ to $t$, all of whose edges are uncapacitated (i.e. infinite capacity)
+\item There are no parallel edges (i.e. two or more edges with the same starting node $i$ and ending node $j$)
+\item For any edge $(i,j) \in E$, the edge $(j,i) \in E$ as well
+\end{enumerate}
+\pagebreak
+
+
+\section{Linear Programming Geometry}
+\hrule \vspace{15pt}
+\subsection{Geometry of the Feasible Set}
+We explore additional geometric properties of feasible sets of general linear programs that are consistent, whose feasible set is non-empty.   We summarize the key definitions below: 
+\begin{itemize}
+\item \textbf{Closed Halfspace}: A set of the form $H_{\leq} = \{ x \in \R^n | a^Tx \leq \beta \}$ or $H_{\geq} = \{ x \in \R^n | a^Tx \geq \beta \}$; an \textit{inequality constraint}
+\item \textbf{Hyperplane}: A set of the form $H = \{ x \in \R^n | a^Tx = \beta \}$ where $a \neq 0$ and $\beta \in \R^1$ is scalar; an \textit{equality constraint}. Any hyperplane can be expressed as two closed halfspaces.  Therefore, feasible point $x \in P$ lies in the intersection of closed halfspaces. 
+\item \textbf{Polyhedron}: The intersection of a finite number of closed halfspaces, also known as the \textit{polyhedral set}
+\item \textbf{Polytope}: A bounded polyhedron
+\item \textbf{Convexity}: A set $C \subseteq \R^n$ is said to be convex if for any $x$ and $y$ in $C$, $\lambda x+(1- \lambda)y \in C$ for all $ \lambda \in [0, 1]$. This means if we consider two points $x$ and $y$ in $H_{\leq}$ (or $H_{\geq}$), then the line segment from $x$ to $y$ will also be contained in $H_{\leq}$ (or $H_{\geq}$). There are some important theorems that follow from this:
+\begin{itemize}
+\item \textbf{Theorem 2.7}: The closed halfspaces $H_{\leq}$ and $H_{\geq}$ are convex sets
+\item \textbf{Theorem 2.8}: The intersection of convex sets is convex.
+\item \textbf{Corollary 2.9}: The feasible set of a linear program is a convex set.
+\end{itemize}
+\end{itemize}
+In general, we can characterize optimal solutions to LPs via the geometry of the hyperplane and feasible set intersection. \\ \\
+Let $P \neq \emptyset$ be the feasible set of a linear program with an objective to minimize $c^Tx$ and let $H= \{ x \in \R | -c^Tx = \beta \}$ If $P \subset H_{\leq} = \{x \in \R^2|-c^Tx \leq \beta \}$ for some $\beta \in \R^1$, then any $x$ in the intersection of $P$ and $H$ is an optimal solution for the linear program. There are 3 cases to consider:
+\begin{itemize}
+\item Unique Intersection:
+\item Infinite Intersection:
+\item Unbounded Case:
+\end{itemize}
+
+\subsection{Extreme Points and Basic Feasible Solutions}
+We develop an algebraic representation of corner points through the corresponding geometric notion of extreme points. Then, an algebraic representation of extreme points. There are a few key definitions to introduce: 
+\begin{itemize}
+\item \textbf{Convex Combination:} A convex combinations of vectors $x_1$, $x_2$, $\cdots$, $x_k \in R^n$ is a linear combination of $\sum_{i=1}^k \lambda_i x_i$ of these vectors such that $\sum_{i=1}^k \lambda_i =1 $ and $lambda_i \geq 0 $
+\item \textbf{Extreme Point: }Let $C\subseteq \R^n$ be a convex set and $x \in C$. A point $x$ is an extreme point of $C$ if it cannot be expressed as a convex combination of other points in $C$.
+\end{itemize}
+The correspondence between the positive components of an extreme point and the invertibility of the corresponding matrix $B$ turns out to algebraically characterize extreme points. We have the following theorem to express this formally:  \\ \\
+\textbf{Theorem 2.13}: Consider a linear program in standard form where the feasible set $P = \{x \in \R^n|Ax = b,x \geq 0 \}$ is non-empty. A vector $x \in P$ is an extreme point if and only if the columns of $A$ corresponding to positive components of $x$ are linearly independent.
+
+\subsection{Resolution Theorem}
+\subsubsection{Resolutions (Representation) Theorem}
+We seek a representation of any $x \in P$ is  in terms of the extreme points of $P$ and recession directions. We first define a ray and recession direction. 
+\begin{itemize}
+\item \textbf{Ray:} A ray is a set of the form $\{ x \in \R^n|x=x_0 +\lambda d \text{ for } \lambda \geq 0 \}$ where $x_0$ is a given point and d is a non-zero vector called the direction vector.
+\item \textbf{Recession Direction}: Let $P$ be a non-empty feasible set of an LP. A non-zero direction $d$ is called a recession direction if for any $x_0 \in P$, the ray $\{x \in \R^n|x = x_0 +\lambda d \text{ for } \lambda \geq 0 \} \subset P$ .
+This leads us to the resolution theorem: 
+Let P = {x ∈ Rn|Ax = b,x ≥ 0} be a non-empty set P . Let v1,v2,...,vk be the extreme points of P.
+(Case 1) If P is bounded, then any x ∈ P can be represented as the convex combination of extreme points, i.e., x = 􏰺ki=1 λivi for some λ1, ..., λk ≥ 0 and 􏰺ki=1 λi = 1.
+(Case 2) If P is unbounded, then there exists at least one extreme direction. Let d1, ..., dl be the extreme directions of P . Then, any x ∈ P can be repre- sented as x = 􏰺ki=1 λivi + 􏰺li=1 μidi, where λ1, ..., λk ≥ 0 and 􏰺ki=1 λi = 1 and μi ≥ 0 for i = 1, ..., l.
+\end{itemize}
+\subsubsection{Fundamental Theorem of Linear Programming}
+\pagebreak
+\section{The Simplex Method}
+\section{Duality Theory}
 
 \end{document}

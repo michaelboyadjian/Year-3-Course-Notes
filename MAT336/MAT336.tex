@@ -5,8 +5,11 @@
 \usepackage{esint}
 \usepackage{cancel}
 \usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{enumitem}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{mathtools}
 \linespread{1.2}
 \allowdisplaybreaks
 \usepackage{color}
@@ -19,6 +22,12 @@
 \definecolor{otherblue}{RGB}{0,70,200}
 \sectionfont{\color{darkblue}} 
 \subsectionfont{\color{otherblue}}  
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\usepackage{fitch}
+\usepackage{bm}
 
 
 \begin{document}
@@ -76,10 +85,202 @@ Mathematics consists of declarative sentences. A \textbf{statement} is a sentenc
 Certain sentences need to be considered within a particular context in order to become a statement. When a sentence involves a variable such as $x$, it is customary to use functional notation when referring to it. \\ 
 
 \textbf{ex.} $p(x)$: $x^2 - 5x + 6$
+\\ \\
+When a variable is used in an equation or an inequality, we assume that the general context for the variable is the set of real numbers, unless we are told otherwise. Within this context we may remove the ambiguity of $p(x)$ by using a quantifier.  There are two quantifiers we will consider:
+\begin{itemize}
+\item \underline{\textbf{universal quantifier}}: Denoted as $\forall$, which represents "for all" or "for every" (i.e. $\forall \;x, \; p(x)$)
+\item \underline{\textbf{existential quantifier}}: Denoted as $\exists$, which represents "there exists" or "there is at least one" (i.e. $\exists \; x \; \ni \;  p(x)$)
+
+\end{itemize}
+
+\subsection{Formal Proofs}
+A formal proof follows a certain rigid structure, governed by some mechanical rules; some conventions that guarantee the truth, based on the analysis of the truth value of the components of a compound statement. There is a specific structure that must be followed when formulating proofs.  The important step is recognizing the \textbf{main connective}:
+\begin{enumerate}
+\item If the statement is \textbf{atomic}, check the provided axioms
+\item If the statement is $ \sim P$, then it is True if $P$ is False
+\item If the statement is \textbf{conjunctive}, $Q \land R$, then $Q$ and $R$ must be individually proved
+\item If the statement is \textbf{disjunctive}, $Q \lor R$, then either one of $Q$ and $R$ must be proved 
+\item If the statement is \textbf{conditional}, $Q \rightarrow R$, then assume $Q$ is True and prove $R$ based on that assumption
+\item If the statement is \textbf{existentially quantified}, then we must find  some constant, $a$, in the universe of the quantifier / variable, and prove that $Q(a)$ is True 
+\item If the statement is \textbf{universally quantified,}  $\forall \; x \; Q(x)$,  then we must start with a generic member of the universe, $x_0$, and prove that $Q(x_0)$ is True
+\end{enumerate}
+\pagebreak
+There are some additional types of proofs that are useful and are special cases of the above: 
+\begin{itemize}
+\item \textbf{Proof by Counterexample}: To prove a universally quantified statement, $\forall \; x \; P(x)$, is False, we need to prove $\sim (\forall \; x \; P(x))$ is True. Thus, we prove $ \exists \; x \; \sim P(x)$ is True.  We must find a constant $a$ to satisfy $ \sim P(a)$. 
+\item \textbf{Proof by Induction}: To prove $\forall \; x \; P(x)$, we can use induction, if $x$ is restricted to the set of natural numbers,  $\N$
+\item \textbf{Proof by Contraposition}: When proving a conditional statement, $P \rightarrow Q$, we can instead prove $ \sim Q \rightarrow \; \sim P$
+\item \textbf{Proof by Contradiction}: When proving a conditional statement, $P \rightarrow Q$, we can assume $P$ and $\sim Q$, and reach a contradiction.  At the contradiction, we declare that $P \rightarrow Q$ is proven
+ \end{itemize}
+
+\subsection{Indentation and Valid Arguments}
+In constructing formal proofs in indented form, we make use of valid arguments or axioms which act as rules. These are summarized here: 
+\begin{multicols}{2}
+\begin{itemize}
+\item \textbf{Repetition} \\
+$\begin{nd}
+\hypo{1} P
+\have {2} P \r{1}
+\end{nd}$ 
+\item \textbf{Conjunction Elimination}\\
+$\begin{nd}
+\hypo {1} {P \land Q}
+\have {2} P \ae{1}
+\end{nd}$ 
+\item \textbf{Excluded Middle} \\
+$\begin{nd}
+\have {1}  {P \lor Q} 
+\hypo {2} {\neg P}
+\have {3} {Q}
+\end{nd}$
+\item \textbf{Disjunction Introduction}\\
+$\begin{nd}
+\hypo {1} P
+\have {2} {P \lor Q} \oi{1}
+\end{nd}$ 
+\item \textbf{Modus Ponens} \\
+$\begin{nd}
+\have {1}  {P \implies Q} 
+\hypo {2} {P}
+\have {3} {Q} \ie{1,2}
+\end{nd}$ 
+\item \textbf{Existential Introduction} \\
+$\begin{nd}
+\hypo {1} { P(a) }
+\have {2} { \exists x\; P(x) } \Ei{1}
+\end{nd}$ 
+\item \textbf{Modus Tolens} \\
+$\begin{nd}
+\have {1}  {P \implies Q} 
+\hypo {2} {\neg Q}
+\have {3} {\neg P}
+\end{nd}$
+
+\item \textbf{Conditional Introduction} \\
+$\begin{nd}
+\open
+\have {1}  {P}
+\have {2} \cdots 
+\have {3} {P}
+\close
+\have {4} {P \implies Q} \ii{1-3}
+\end{nd}$
+\item \textbf{Universal Introduction} \\
+$\begin{nd}
+\open
+\have {1}  {\text{given }x}
+\have {2} \cdots 
+\have {3} {P(x)}
+\close
+\have {4} {\forall x \; P(x)} \Ai{1-3}
+\end{nd}$
+\item \textbf{Contradiction} \\
+$\begin{nd}
+\open
+\have {1}  {\neg P}
+\have {2} \cdots 
+\have {2} \cdots 
+\have {2} \cdots 
+\have {2} \cdots 
+\have {3} {\bot}
+\close
+\have {4} {P} \ne{1-3}
+\end{nd}$ 
+\item \textbf{Proof by Cases} \\
+$\begin{nd}
+\open
+\have {1}  {\neg P}
+\have {2} \cdots 
+\have {3} {R}
+\close
+\open
+\have {4}  { P}
+\have {5} \cdots 
+\have {6} {R}
+\close
+\have {7} {R} 
+\end{nd}$ 
+\end{itemize}
+\end{multicols}
+\noindent An indented proof places the mathematical core of the argument within the logical proof structure, and presents both components in a convenient visual frame. In a way, an indented proof is the map of a proof in its most formal details. There are some noticeble features of this proof style:
+\begin{enumerate}
+\item \textbf{Most Logical}: It contains the exact proof structure as well as the exact application of each rule of inference, along with the appropriate documentation.
+\item \textbf{Dynamic and Suggestive}: The close connection between the indented presentation and the proof structures leads the writer to the next step of the proof.
+\item \textbf{Transparency}: An indented proof is visually transparent:
+\begin{itemize}
+\item Indentation allows for visual appreciation of various layers of assumptions, and hence one senses the depth of an argument.
+\item One can visually observe the scope of various assumptions and quantifiers, when they begin and when they end. One can see when and how an argument reaches a conclusion.
+\item No steps of a proof appear implicitly. In an indented argument there is little room for interpretation and for implicit ideas.
+\end{itemize}
+\item \textbf{Documentation}: Line by line, the arguments are documentated.
+\end{enumerate}
+\pagebreak
+
+\section{Sets and Functions}
+\hrule \vspace{15pt}
+
+\subsection{Basic Set Operations}
+\subsection{Ordered Pairs}
+\subsection{Functions}
+\subsection{Cardinality}
+\pagebreak
+\section{The Real Numbers}
+\hrule \vspace{15pt}
+
+\subsection{Natural Numbers and Inductions}
+$\N$ is known as the set of natural numbers, which is the set of positive integers:
+$$ \N = \{1,2,3,4, \cdots \}$$
+One important property, which we consider an axiom is the \textbf{Well Ordering Property of} $\bm { \N }$, which states if $S$ is a non-empty subset of $\N$, then there exists an element $m \in S$ such that $ m \leq k$ for all $k \in S$.  \\ \\
+The \textbf{Principle of Mathematical Induction} is an important tool to use when proving theorems involving natural numbers.  $P(n)$ is a statement that is either True or False for each $n \in \N$.  $P(n)$ is then True for all $n \in \N$ provided that 
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{basis}: $P(1)$ is True, and
+\item \textbf{inductive step}: for each $k \in \N$, if $P(k)$  is True, then $P(k+1)$ is True
+\end{enumerate}
+\subsection{Ordered Fields}
+The set $\R$ of real numbers can be described as a ``complete ordered field". The axioms of an ordered field are summarized below:
+\begin{enumerate}[label = A\arabic*.]
+\item For all $x$, $y$ $\in$ $\R$, $ x+y \in \R$ and if $x=w$ and $y=z$, then $x+y = w+z$
+\item For all $x$, $y$ $\in$ $\R$,  $x+y = y+x$
+\item For all $x$, $y$, $z$ $\in$ $\R$,  $x+(y +z) = (x+y)+z$
+\item There is a unique real number $0$ such that $x + 0 = x$, for all $x \in \R$
+\item For each $x \in \R$, there is a unique real number, $-x$, such that $x + (-x) = 0$ 
+\end{enumerate}
+\begin{enumerate}[label = M\arabic*.]
+\item For all $x$, $y$ $\in$ $\R$, $ x\cdot y \in \R$ and if $x=w$ and $y=z$, then $x\cdot y = w \cdot z$
+\item For all $x$, $y$ $\in$ $\R$,  $x\cdot y = y \cdot x$
+\item For all $x$, $y$, $z$ $\in$ $\R$,  $x \cdot (y \cdot z) = (x \cdot y) \cdot z$
+\item There is a unique real number $1$ such that $1\neq0$ and $x \cdot 1 = x$, for all $x \in \R$
+\item For each $x \in \R$ with $x \neq 0$, there is a unique real number $1/x$ such that $x \cdot (1/x) =1 $
+\end{enumerate}
+\begin{enumerate}[label = DL.]
+\item For all $x$, $y$, $z$ $\in$ $\R$,  $x \cdot (y+z) = x\cdot y + x\cdot z$
+\end{enumerate}
+In addition to the field axioms, the real numbers also satisfy four order axioms. These axioms identify the properties of the relation ``$<$”. A real number x is called nonnegative if $x \geq 0$ and positive if $x > 0$. The properties are given as:
+\begin{enumerate}[label = O\arabic*.]
+\item For all $x$, $y$ $\in$ $\R$,  exactly one of the relations $x=y$, $x<y$, or $x>y$ holds.
+\item For all $x$, $y$ $\in$ $\R$,  if $x<y$ and $y<z$, then $x<z$
+\item For all $x$, $y$ $\in$ $\R$,  if $x<y$, then $x+z<y+z$
+\item For all $x$, $y$ $\in$ $\R$,  if $x<y$ and $z>0$, then $xz<yz$
+\end{enumerate}
+The following theorem illustrates how the axioms may be used to derive some familiar algebraic properties. Given $x$, $y$, and $z$ are real numbers. 
+\begin{enumerate}[label = (\alph*)]
+\item If $x+y = y+z$, then $x=y$
+\item $x\cdot 0 = 0$
+\item $-0 = 0$
+\item $(-1) \cdot x = -x $
+\item $x \cdot y = 0$ if and only if $x=0$ or $y=0$
+\item $x<y$ if and only if $-y < -x$
+\item If $x<y$ and $z<0$, then $xz>yz$
+\end{enumerate}
+Any mathematical system that satisfies these 15 axioms is called an \textbf{ordered field.} Thus the real numbers are an example of an ordered field.  The rational numbers $\Q$ are also an ordered field.
+$$ \Q = \left\lbrace \frac{m}{n} : m, \; n \in \Z \; \text{and} \; n\neq 0 \right\rbrace$$
+
+\subsection{The Completeness Axiom}
+
+\subsection{Topology of The Real Numbers}
 
 
 \pagebreak
-\section{The Real Numbers}
 \section{Sequences}
 \section{Limits and Continuity}
 

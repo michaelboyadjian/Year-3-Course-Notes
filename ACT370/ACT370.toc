@@ -1,9 +1,16 @@
-\contentsline {section}{\numberline {1}Introduction to Pricing, Financial Instruments, and Derivatives}{3}% 
+\contentsline {section}{\numberline {1}Introduction to Forwards and Options}{3}% 
 \contentsline {subsection}{\numberline {1.1}Derivatives}{3}% 
 \contentsline {subsection}{\numberline {1.2}Forward Contracts}{3}% 
 \contentsline {subsection}{\numberline {1.3}Options}{4}% 
-\contentsline {section}{\numberline {2}Binomial Asset Pricing Model}{5}% 
-\contentsline {section}{\numberline {3}Lognormal Stock Price Model}{5}% 
-\contentsline {section}{\numberline {4}Black-Scholes Formula}{5}% 
-\contentsline {section}{\numberline {5}Exotic Options}{5}% 
-\contentsline {section}{\numberline {6}Interest Rate Derivatives}{5}% 
+\contentsline {subsection}{\numberline {1.4}Embedded Derivatives}{5}% 
+\contentsline {section}{\numberline {2}Financial Forwards and Futures}{6}% 
+\contentsline {subsection}{\numberline {2.1}Alternative Ways to Stock}{6}% 
+\contentsline {subsection}{\numberline {2.2}Pricing Prepaid Forwards}{6}% 
+\contentsline {subsection}{\numberline {2.3}Pricing Forwards on Stock}{7}% 
+\contentsline {subsection}{\numberline {2.4}Creating Synthetic Forwards}{7}% 
+\contentsline {subsection}{\numberline {2.5}Futures Contracts}{7}% 
+\contentsline {section}{\numberline {3}Binomial Asset Pricing Model}{8}% 
+\contentsline {section}{\numberline {4}Lognormal Stock Price Model}{8}% 
+\contentsline {section}{\numberline {5}Black-Scholes Formula}{8}% 
+\contentsline {section}{\numberline {6}Exotic Options}{8}% 
+\contentsline {section}{\numberline {7}Interest Rate Derivatives}{8}% 

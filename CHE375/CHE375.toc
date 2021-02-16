@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Macroeconomics}{3}% 
+\contentsline {subsection}{\numberline {1.1}Market Model}{3}% 
+\contentsline {subsection}{\numberline {1.2}GDP and Inflation}{3}% 
+\contentsline {subsubsection}{\numberline {1.2.1}GDP}{3}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Inflation}{3}% 
+\contentsline {subsection}{\numberline {1.3}Unemployment}{3}% 
+\contentsline {section}{\numberline {2}Managerial Accounting}{4}% 
+\contentsline {section}{\numberline {3}Corporate Finance}{4}% 
